@@ -1,0 +1,68 @@
+
+ROM used:   712/8192 (9%)
+            712/8192 (9%) including unused fragments
+
+            0.5 Average locations per line
+            5.4 Average locations per statement
+
+RAM used:   7/368 (2%) at main() level
+            21/368 (6%) worst case
+
+Stack used: 6 worst case (6 in main + 0 for interrupts)
+Stack size: 8
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   72    47  36  main.c
+   10     0   0  main.h
+  768     0   0  ..\..\..\Program Files (x86)\PICC\Devices\16F887.h
+  456    84  64  ..\..\..\Program Files (x86)\PICC\Drivers\lcd.c
+----- -----
+ 1306   131 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     20   3    1             @delay_ms1
+ Inline         3   596  5.9  lcd_read_byte
+0      6   1    0    59  4.2  lcd_read_nibble
+0     17   2    1   179  3.3  lcd_send_nibble
+0     66   9    3   460  4.7  lcd_send_byte
+0     62   9    6   814  7.2  lcd_init
+0     18   3    4   208  6.3  lcd_gotoxy
+0     44   6    1   354  4.7  lcd_putc
+ Inline         1   330  4.5  blink
+0      8   1    0             @const662
+0     86  12    4             @PSTRINGC7_646
+0      9   1    0             @const664
+0    132  19    1   688  5.2  count
+0      9   1    0             @const666
+0     87  12    5             @PSTRINGCN7_646
+0     21   3    3             @DIV88
+0     53   7    2             @PRINTF_U_646
+0      9   1    0   165  2.5  @const675
+0     52   7    0   165  2.5  MAIN
+0      9   1    0   197  2.5  @const679
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               12
+    Statements              131
+    Comments                235
+    Volume (V)              6871
+    Difficulty (D)          51.5
+    Effort to implement (E) 353831
+    Time to implement (T)   5 hours, 28 minutes
+    Est Delivered Bugs (B)  2
+    Cyclomatic Complexity   16
+    Maintainability (MI)    126
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00003     4  0  
+00004-007FF   708  1336  
+00800-00FFF     0  2048  
+01000-017FF     0  2048  
+01800-01FFF     0  2048  
+
+
+

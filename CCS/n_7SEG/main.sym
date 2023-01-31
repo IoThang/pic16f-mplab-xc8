@@ -1,0 +1,96 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+004-005 @WRITE_PROGRAM_MEMORY8.P2
+015     CCP_1_LOW
+015     CCP_1
+016     CCP_1_HIGH
+01B     CCP_2
+01B     CCP_2_LOW
+01C     CCP_2_HIGH
+020-027 DLHT
+028     @TRIS_C
+029-02C atan2.y
+029-02C MAIN.giay
+02D-030 tachSo.n
+02D-030 atan2.x
+02D     hienthi.j
+02E     hienthi.quet
+02F     hienthi.i
+030     @delay_ms1.P1
+030     hienthi.@SCRATCH1
+031-034 atan2.z
+031     tachSo.i
+032     tachSo.@SCRATCH1
+033     tachSo.@SCRATCH2
+034     tachSo.@SCRATCH3
+035.0   atan2.sign
+035     tachSo.@SCRATCH4
+036     atan2.quad
+036     tachSo.@SCRATCH5
+037     tachSo.@SCRATCH6
+038     tachSo.@SCRATCH7
+039     tachSo.@SCRATCH8
+03A-03D @DIV3232.P1
+03A     tachSo.@SCRATCH9
+03B     tachSo.@SCRATCH10
+03C     tachSo.@SCRATCH11
+03D     tachSo.@SCRATCH12
+03E-041 @DIV3232.P1
+042     @DIV3232.@SCRATCH1
+043     @DIV3232.@SCRATCH2
+044     @DIV3232.@SCRATCH3
+045     @DIV3232.@SCRATCH4
+046     @DIV3232.@SCRATCH5
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+107.6   C1OUT
+108.6   C2OUT
+10D-10E @WRITE_PROGRAM_MEMORY8.P1
+10D-10E @READ_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000004  maLed.call
+000008  maLed.data
+000012  @DIV3232
+000061  tachSo
+0000CB  hienthi
+0000EB  @delay_ms1
+000111  @cinit1
+000111  MAIN
+000125  @cinit2
+
+Project Directory:
+    C:\PIC16F887\n_7SEG\
+
+Project Files:
+    main.c                                                  [28-Thg2-22 07:40  CRC=BD3DC295]
+    main.h                                                  [27-Thg2-22 16:57  CRC=D8102B21]
+    ..\..\Program Files (x86)\PICC\Devices\16F887.h         [12-Thg11-13 14:35  CRC=6CB1A611]
+    ..\..\Program Files (x86)\PICC\Drivers\math.h           [28-Thg9-12 11:35  CRC=546412C9]
+
+Source signature=AAC7B959
+
+Units:
+    main (main)
+
+Compiler Settings:
+    Processor:      PIC16F887
+    Pointer Size:   16
+    ADC Range:      0-65535
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   main.xsym
+    Errors:      main.err
+    Ext Symbols: main.esym
+    INHX8:       main.hex
+    Symbols:     main.sym
+    List:        main.lst
+    Debug/COFF:  main.cof
+    Project:     main.ccspjt
+    Call Tree:   main.tre
+    Statistics:  main.STA

@@ -1,0 +1,338 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PIC14E ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F1509 ]
+[d frameptr 6 ]
+"72 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+[v _pad pad `(i  1 s 2 pad ]
+"615
+[v _utoa utoa `(i  1 s 2 utoa ]
+"692
+[v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
+"1390
+[v _vfprintf vfprintf `(i  1 e 2 0 ]
+"7 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\lodiv.c
+[v ___lodiv __lodiv `(uo  1 e 8 0 ]
+"7 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\lomod.c
+[v ___lomod __lomod `(uo  1 e 8 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\nf_fputc.c
+[v _fputc fputc `(i  1 e 2 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\nf_fputs.c
+[v _fputs fputs `(i  1 e 2 0 ]
+"9 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\nf_sprintf.c
+[v _sprintf sprintf `(i  1 e 2 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\strlen.c
+[v _strlen strlen `(ui  1 e 2 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"25 C:\PIC16F887\MPLAB\UART\uart_p4\uart_p4.X\newmain.c
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+"33
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+"45
+[v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
+"53
+[v _EUSART_Read EUSART_Read `(uc  1 e 1 0 ]
+"65
+[v _EUSART_Write EUSART_Write `(v  1 e 1 0 ]
+"73
+[v _putch putch `(v  1 e 1 0 ]
+"83
+[v _ON_OFF_BLINK ON_OFF_BLINK `(v  1 e 1 0 ]
+"156
+[v _main main `(v  1 e 1 0 ]
+[s S38 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 SSP1IF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+`uc 1 TMR1GIF 1 0 :1:7 
+]
+"598 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1509.h
+[u S47 . 1 `S38 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES47  1 e 1 @17 ]
+"1042
+[v _TRISA TRISA `VEuc  1 e 1 @140 ]
+"1092
+[v _TRISB TRISB `VEuc  1 e 1 @141 ]
+"1131
+[v _TRISC TRISC `VEuc  1 e 1 @142 ]
+"1533
+[v _OSCCON OSCCON `VEuc  1 e 1 @153 ]
+"1867
+[v _LATA LATA `VEuc  1 e 1 @268 ]
+"1912
+[v _LATB LATB `VEuc  1 e 1 @269 ]
+"1951
+[v _LATC LATC `VEuc  1 e 1 @270 ]
+"2297
+[v _BORCON BORCON `VEuc  1 e 1 @278 ]
+"2546
+[v _ANSELA ANSELA `VEuc  1 e 1 @396 ]
+"2593
+[v _ANSELB ANSELB `VEuc  1 e 1 @397 ]
+"2629
+[v _ANSELC ANSELC `VEuc  1 e 1 @398 ]
+"2879
+[v _RCREG RCREG `VEuc  1 e 1 @409 ]
+"2899
+[v _TXREG TXREG `VEuc  1 e 1 @410 ]
+"2926
+[v _SPBRGL SPBRGL `VEuc  1 e 1 @411 ]
+"2946
+[v _SPBRGH SPBRGH `VEuc  1 e 1 @412 ]
+"2966
+[v _RCSTA RCSTA `VEuc  1 e 1 @413 ]
+[s S59 . 1 `uc 1 RX9D 1 0 :1:0 
+`uc 1 OERR 1 0 :1:1 
+`uc 1 FERR 1 0 :1:2 
+`uc 1 ADDEN 1 0 :1:3 
+`uc 1 CREN 1 0 :1:4 
+`uc 1 SREN 1 0 :1:5 
+`uc 1 RX9 1 0 :1:6 
+`uc 1 SPEN 1 0 :1:7 
+]
+"2983
+[u S68 . 1 `S59 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES68  1 e 1 @413 ]
+"3028
+[v _TXSTA TXSTA `VEuc  1 e 1 @414 ]
+"3090
+[v _BAUDCON BAUDCON `VEuc  1 e 1 @415 ]
+"11707
+[v _RCIF RCIF `VEb  1 e 0 @141 ]
+"12016
+[v _TXIF TXIF `VEb  1 e 0 @140 ]
+"55 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+[v _flags flags `i  1 s 2 flags ]
+[v _prec prec `i  1 s 2 prec ]
+[v _width width `i  1 s 2 width ]
+"66
+[v _dbuf dbuf `[32]uc  1 s 32 dbuf ]
+"69
+[v _nout nout `i  1 s 2 nout ]
+"18 C:\PIC16F887\MPLAB\UART\uart_p4\uart_p4.X\newmain.c
+[v _buffer buffer `[100]uc  1 e 100 @8588 ]
+"19
+[v _buffer1 buffer1 `[1]uc  1 e 1 0 ]
+"21
+[v _savee savee `uc  1 e 1 0 ]
+"22
+[v _savee1 savee1 `uc  1 e 1 0 ]
+"23
+[v _savee2 savee2 `uc  1 e 1 0 ]
+"24
+[v _val val `uc  1 e 1 0 ]
+"156
+[v _main main `(v  1 e 1 0 ]
+{
+"164
+[v main@i i `uc  1 a 1 78 ]
+"178
+} 0
+"33
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+{
+"44
+} 0
+"25
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+{
+"31
+} 0
+"83
+[v _ON_OFF_BLINK ON_OFF_BLINK `(v  1 e 1 0 ]
+{
+"126
+[v ON_OFF_BLINK@cnt_141 cnt `uc  1 a 1 13 ]
+"102
+[v ON_OFF_BLINK@cnt cnt `uc  1 a 1 12 ]
+"118
+[v ON_OFF_BLINK@k k `uc  1 a 1 17 ]
+"119
+[v ON_OFF_BLINK@j j `uc  1 a 1 16 ]
+"85
+[v ON_OFF_BLINK@bitt bitt `uc  1 a 1 15 ]
+"86
+[v ON_OFF_BLINK@bittt bittt `uc  1 a 1 14 ]
+"83
+[v ON_OFF_BLINK@buffer buffer `*.39uc  1 p 2 69 ]
+[v ON_OFF_BLINK@buffer1 buffer1 `*.4uc  1 p 1 71 ]
+[v ON_OFF_BLINK@i i `uc  1 p 1 72 ]
+"154
+} 0
+"9 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\nf_sprintf.c
+[v _sprintf sprintf `(i  1 e 2 0 ]
+{
+[v sprintf@s s `*.4uc  1 a 1 wreg ]
+[u S465 . 2 `*.1uc 1 buffer 2 0 `*.1DCuc 1 source 2 0 ]
+"13
+[s S468 _IO_FILE 10 `S465 1 . 2 0 `i 1 count 2 2 `[2]uc 1 ungetbuf 2 4 `i 1 ungetcnt 2 6 `i 1 limit 2 8 ]
+[v sprintf@f f `S468  1 a 10 2 ]
+"12
+[v sprintf@ap ap `[1]*.4v  1 a 1 0 ]
+"9
+[v sprintf@s s `*.4uc  1 a 1 wreg ]
+[v sprintf@fmt fmt `*.25DCuc  1 p 2 64 ]
+"15
+[v sprintf@s s `*.4uc  1 a 1 1 ]
+"23
+} 0
+"1390 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\doprnt.c
+[v _vfprintf vfprintf `(i  1 e 2 0 ]
+{
+[s S500 _IO_FILE 0 ]
+[v vfprintf@fp fp `*.4S500  1 a 1 wreg ]
+"1393
+[v vfprintf@cfmt cfmt `*.25uc  1 a 2 62 ]
+"1390
+[v vfprintf@fp fp `*.4S500  1 a 1 wreg ]
+[v vfprintf@fmt fmt `*.25DCuc  1 p 2 56 ]
+[v vfprintf@ap ap `*.4*.4v  1 p 1 58 ]
+"1395
+"1390
+[v vfprintf@fp fp `*.4S500  1 a 1 61 ]
+"1404
+} 0
+"692
+[v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
+{
+[s S500 _IO_FILE 0 ]
+[v vfpfcnvrt@fp fp `*.4S500  1 a 1 wreg ]
+"697
+[v vfpfcnvrt@llu llu `uo  1 a 8 47 ]
+"692
+[v vfpfcnvrt@fp fp `*.4S500  1 a 1 wreg ]
+[v vfpfcnvrt@fmt fmt `*.4*.25uc  1 p 1 40 ]
+[v vfpfcnvrt@ap ap `*.4*.4v  1 p 1 41 ]
+"702
+"692
+[v vfpfcnvrt@fp fp `*.4S500  1 a 1 55 ]
+"1387
+} 0
+"615
+[v _utoa utoa `(i  1 s 2 utoa ]
+{
+[s S500 _IO_FILE 0 ]
+[v utoa@fp fp `*.4S500  1 a 1 wreg ]
+"618
+[v utoa@n n `uo  1 a 8 30 ]
+"617
+[v utoa@i i `i  1 a 2 38 ]
+[v utoa@w w `i  1 a 2 28 ]
+[v utoa@p p `i  1 a 2 26 ]
+"615
+[v utoa@fp fp `*.4S500  1 a 1 wreg ]
+[v utoa@d d `uo  1 p 8 16 ]
+"621
+"615
+[v utoa@fp fp `*.4S500  1 a 1 25 ]
+"641
+} 0
+"72
+[v _pad pad `(i  1 s 2 pad ]
+{
+[s S500 _IO_FILE 0 ]
+[v pad@fp fp `*.4S500  1 a 1 wreg ]
+"74
+[v pad@w w `i  1 a 2 10 ]
+[v pad@i i `i  1 a 2 8 ]
+"72
+[v pad@fp fp `*.4S500  1 a 1 wreg ]
+[v pad@buf buf `*.4uc  1 p 1 4 ]
+[v pad@p p `i  1 p 2 5 ]
+"77
+"72
+[v pad@fp fp `*.4S500  1 a 1 12 ]
+"95
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\strlen.c
+[v _strlen strlen `(ui  1 e 2 0 ]
+{
+[v strlen@s s `*.4DCuc  1 a 1 wreg ]
+"7
+[v strlen@a a `*.4DCuc  1 a 1 3 ]
+"5
+[v strlen@s s `*.4DCuc  1 a 1 wreg ]
+"7
+[v strlen@s s `*.4DCuc  1 a 1 4 ]
+"12
+} 0
+"8 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\nf_fputs.c
+[v _fputs fputs `(i  1 e 2 0 ]
+{
+[v fputs@s s `*.4DCuc  1 a 1 wreg ]
+"11
+[v fputs@i i `i  1 a 2 1 ]
+"10
+[v fputs@c c `uc  1 a 1 0 ]
+"8
+[v fputs@s s `*.4DCuc  1 a 1 wreg ]
+[u S465 . 2 `*.1uc 1 buffer 2 0 `*.1DCuc 1 source 2 0 ]
+[s S468 _IO_FILE 10 `S465 1 . 2 0 `i 1 count 2 2 `[2]uc 1 ungetbuf 2 4 `i 1 ungetcnt 2 6 `i 1 limit 2 8 ]
+[v fputs@fp fp `*.4S468  1 p 1 10 ]
+"13
+[v fputs@s s `*.4DCuc  1 a 1 3 ]
+"19
+} 0
+"8 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\nf_fputc.c
+[v _fputc fputc `(i  1 e 2 0 ]
+{
+[v fputc@c c `i  1 p 2 2 ]
+[u S465 . 2 `*.1uc 1 buffer 2 0 `*.1DCuc 1 source 2 0 ]
+[s S468 _IO_FILE 10 `S465 1 . 2 0 `i 1 count 2 2 `[2]uc 1 ungetbuf 2 4 `i 1 ungetcnt 2 6 `i 1 limit 2 8 ]
+[v fputc@fp fp `*.4S468  1 p 1 4 ]
+"24
+} 0
+"73 C:\PIC16F887\MPLAB\UART\uart_p4\uart_p4.X\newmain.c
+[v _putch putch `(v  1 e 1 0 ]
+{
+[v putch@x x `uc  1 a 1 wreg ]
+[v putch@x x `uc  1 a 1 wreg ]
+[v putch@x x `uc  1 a 1 1 ]
+"77
+} 0
+"65
+[v _EUSART_Write EUSART_Write `(v  1 e 1 0 ]
+{
+[v EUSART_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART_Write@txData txData `uc  1 a 1 0 ]
+"72
+} 0
+"7 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\lomod.c
+[v ___lomod __lomod `(uo  1 e 8 0 ]
+{
+"12
+[v ___lomod@counter counter `uc  1 a 1 1 ]
+"7
+[v ___lomod@divisor divisor `uo  1 p 8 0 ]
+[v ___lomod@dividend dividend `uo  1 p 8 8 ]
+"27
+} 0
+"7 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\lodiv.c
+[v ___lodiv __lodiv `(uo  1 e 8 0 ]
+{
+"12
+[v ___lodiv@quotient quotient `uo  1 a 8 1 ]
+"13
+[v ___lodiv@counter counter `uc  1 a 1 9 ]
+"7
+[v ___lodiv@divisor divisor `uo  1 p 8 0 ]
+[v ___lodiv@dividend dividend `uo  1 p 8 8 ]
+"32
+} 0
+"53 C:\PIC16F887\MPLAB\UART\uart_p4\uart_p4.X\newmain.c
+[v _EUSART_Read EUSART_Read `(uc  1 e 1 0 ]
+{
+"64
+} 0
+"45
+[v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
+{
+"52
+} 0

@@ -1,0 +1,17 @@
+#include <main.h>
+const UNSIGNED char maLed[10]={0xC0, 0xF9, 0xA4, 0xB0, 0x99, 0x92, 0x82, 0b11111000, 0x80, 0x90};
+void xuatLed(unsigned char n)
+{
+   
+}
+void main()
+{
+   setup_timer_0(RTCC_EXT_L_TO_H|RTCC_DIV_1|RTCC_8_bit);      //51,2 us overflow
+
+
+   while(TRUE)
+   {
+      //TODO: User Code
+   }
+
+}

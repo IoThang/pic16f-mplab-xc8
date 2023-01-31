@@ -1,0 +1,43 @@
+//chay mo phong ko dc :((
+
+#include <main.h>
+#include <lcd.c>
+unsigned char sp = 0;
+unsigned char box = 0;
+unsigned char mode = 0;
+void main()
+{
+   lcd_init();
+   setup_timer_1(T1_EXTERNAL|T1_DIV_BY_1);
+   set_timer1(0);
+   
+   while(TRUE)
+   {
+      if(input(pin_b0) == 0)  { mode = 1; }
+      if(input(pin_b1) == 0)  { mode = 2; }
+      
+      sp = get_timer1();
+      if(sp == 10)
+      {
+         set_timer1(0);
+         box++;
+      }
+      if(box == 2)
+      {
+         lcd_gotoxy(13,2);
+         lcd_putc("FULL");
+      }
+      if(mode == 1)
+      {
+         lcd_gotoxy(1, 1);
+         printf(lcd_putc,"P=%2u", sp);
+         lcd_gotoxy(13,1);
+         lcd_putc("RUN");
+         delay_ms(100);
+      }
+      
+      lcd_gotoxy(1,2);
+      printf(lcd_putc,"Box=%04u", box);
+   }
+
+}

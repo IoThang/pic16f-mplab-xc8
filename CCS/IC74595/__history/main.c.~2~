@@ -1,0 +1,41 @@
+#include <main.h>
+#define ser pin_d0
+#define sck pin_d1
+#define rck pin_d2
+unsigned int16 y;
+unsigned int16 i;
+void xuat_1byte(unsigned char xuatbyte)  //xuatbyte = abcdefgh
+{
+   unsigned char i;
+   #bit bser = xuatbyte.7  //Truy xuat toi vi tri bit thu 7  => bser = a
+   for(i = 0; i < 8; i++)
+   {
+      output_bit(ser, bser);   //Xuat bit cao ra truoc la bit thu 7
+      output_low(sck); output_high(sck);  //Kich xung sck (canh len) dua bit vao thanh ghi
+      xuatbyte <<= 1;
+   }
+}
+void xuat_16bit(unsigned int16 led) //VD led = abcdefgh qwertyui
+{
+   int8 donvi = led; // donvi = qwertyui
+   int8 chuc = led >> 8;  //chuc = abcdefgh
+   xuat_1byte(chuc); //phai 8bit = 1byte moi dua vao ham dc
+   xuat_1byte(donvi);
+   output_low(rck); output_high(rck);  //Kich xung sck (canh len) dua bit ra khoi thanh ghi
+}
+void main()
+{
+   set_tris_d(0);
+   while(TRUE)
+   {
+      y = 0;
+      xuat_16bit(y);
+      for(i = 0; i < 16; i++)
+      {
+         y = (y << 1) + 1;
+         xuat_16bit(y);
+         delay_ms(500);
+      }
+   }
+
+}

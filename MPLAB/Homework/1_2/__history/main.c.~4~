@@ -1,0 +1,25 @@
+#include <main.h>
+
+void main()
+{
+   set_tris_d(0);
+   while(TRUE)
+   {
+      output_high(PIN_);
+      output_low(PIN_D1);
+      output_low(PIN_D2);
+      delay_ms(500);
+      
+      output_low(PIN_D0);
+      output_high(PIN_D1);
+      output_low(PIN_D2);
+      delay_ms(500);
+      
+       output_low(PIN_D0);
+       output_low(PIN_D1);
+      output_high(PIN_D2);
+      delay_ms(500);
+
+   }
+
+}

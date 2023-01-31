@@ -1,0 +1,137 @@
+
+#include <main.h>
+//Den sang duoi theo
+
+//UNSIGNED CHAR NUMBER1[] = {0b00000001, 0b00000010, 0b00000100, 0b00001000, 0b00010000, 0b00100000, 0b01000000, 0b10000000};
+//Den sang dan
+//UNSIGNED CHAR NUMBER2[] = {0b00000001, 0b00000011, 0b00000111, 0b00001111, 0b00011111, 0b00111111, 0b01111111, 0b11111111};
+//Den sang don
+//UNSIGNED CHAR NUMBER3[] = {0b10000000, 0b11000000, 0b11100000, 0b11110000, 0b11111000, 0b11111100, 0b11111110, 0b11111111};
+void led(INT tenLed, int level)
+{
+   IF(tenLed == 1)
+      output_bit(PIN_B0, level);
+
+   else IF(tenLed == 2)
+      output_bit(PIN_B1, level);
+
+   else IF(tenLed == 3)
+      output_bit(PIN_B2, level);
+
+   else IF(tenLed == 4)
+      output_bit(PIN_B3, level);
+
+   else IF(tenLed == 5)
+      output_bit(PIN_B4, level);
+
+   else IF(tenLed == 6)
+      output_bit(PIN_B5, level);
+
+   else IF(tenLed == 7)
+      output_bit(PIN_B6, level);
+
+   else IF(tenLed == 8)
+      output_bit(PIN_B7, level);
+}
+
+void blink (INT time)
+{
+   UNSIGNED char i;
+   FOR (i = 0; i < time; i++)
+   {
+      output_b (0xFF);
+      delay_ms (100);
+      output_b (0x00);
+      delay_ms (100);
+   }
+}
+
+void ledSangDuoiTheo(INT time)
+{
+   CHAR i, j;
+   FOR(j = 0; j < time; j++)
+   {
+      FOR (i = 0; i < 8; i++) //led sang duoi theo
+      {
+         //Cach 1
+         //output_b (NUMBER1[i]);
+         //delay_ms (300);
+         
+         //Cach 2
+         led (i + 1, 1);
+         delay_ms (300);
+         led (i + 1, 0);
+      }
+   }
+}
+
+void ledSangDan(INT time)
+{
+   CHAR i, j;
+   FOR (j = 0; j < time; j++)
+   {
+      FOR (i = 0; i < 8; i++) //Led sang dan
+      {
+         //Cach 1
+         //output_b (NUMBER2[j]);
+         //delay_ms (300);
+         
+         //Cach 2
+         led (i + 1, 1);
+         delay_ms (300) ;
+      }
+
+      output_b (0x00);
+      delay_ms (300);
+   }
+}
+
+void ledSangDon(INT time)
+{
+   CHAR i, j, k;
+   FOR (j = 0; j < time; j++)
+   {
+      FOR (i = 8; i >= 1; i--) //Led sang dan
+      {
+         FOR (k = 1; k < i + 1; k++)
+         {
+            led (k, 1);
+            delay_ms (300) ;
+            led (k, 0);
+         }
+
+         led (i, 1);
+      }
+
+      output_b (0x00);
+      delay_ms (300);
+   }
+}
+
+void main()
+{
+set_tris_b(0);
+set_tris_c(0);
+port_b(0x00);
+
+   WHILE (TRUE)
+   {
+      /*blink (10);
+      
+      output_b (0x00); //tat het led
+      delay_ms (300);
+      
+      ledSangDuoiTheo (3) ;
+      
+      output_b (0x00);
+      delay_ms (300);
+      
+      ledSangDan (3) ;
+      
+      output_b (0x00);
+      delay_ms (300);
+      
+      ledSangDon (3) ;*/
+   }
+}
+

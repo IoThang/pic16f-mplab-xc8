@@ -1,0 +1,19 @@
+ÀÄmain
+   ÀÄMAIN  0/53  Ram=0
+      ÃÄ@cinit1  (Inline)  Ram=0
+      ÃÄdich_byte  0/122  Ram=14
+      ³  ÃÄ@DIV1616  0/37  Ram=5
+      ³  ÃÄ@const620  0/14  Ram=0
+      ³  ÃÄ@DIV1616  0/37  Ram=5
+      ³  ÃÄ@DIV1616  0/37  Ram=5
+      ³  ÃÄ@const620  0/14  Ram=0
+      ³  ÃÄ@DIV1616  0/37  Ram=5
+      ³  ÃÄ@DIV1616  0/37  Ram=5
+      ³  ÃÄ@const620  0/14  Ram=0
+      ³  ÃÄ@DIV1616  0/37  Ram=5
+      ³  ÃÄ@const620  0/14  Ram=0
+      ³  ÃÄxuat_1byte  0/32  Ram=1
+      ³  ÃÄxuat_1byte  0/32  Ram=1
+      ³  ÃÄxuat_1byte  0/32  Ram=1
+      ³  ÀÄxuat_1byte  0/32  Ram=1
+      ÀÄ@delay_ms1  0/22  Ram=1

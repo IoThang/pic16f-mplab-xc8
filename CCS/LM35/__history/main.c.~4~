@@ -1,0 +1,18 @@
+#include <main.h>
+#include <lcd.c>
+//xem lai device adc = 16 thu xem
+void main()
+{
+   lcd_init();
+   set_tris_d(0);
+   setup_adc(ADC_CLOCK_DIV_2);
+   setup_adc_ports(sAN0|VSS_VDD);
+   while(TRUE)
+   {
+      set_adc_channel(0);
+      lcd_gotoxy(5,1);
+      float temp = read_adc() / 2.046;
+      printf(lcd_putc,"%f", temp);
+   }
+
+}

@@ -1,0 +1,47 @@
+
+#include <main.h>
+#define BUTTON PIN_D0
+
+unsigned CHAR chuSo[7];
+
+const UNSIGNED char maLed[]={0x40, 0x79, 0x24, 0x30, 0x19, 0x12, 0x02, 0x78, 0x00, 0x10};
+const UNSIGNED char maQuet[] = {0b11111101, 0b11111110};
+void tachSo(UNSIGNED char temp, char soLed)
+{
+   for(INT i = 0; i < soLed; i++)
+   {
+      chuSo[i] = temp % 10;   // 25 % 10 = 5  => Them vao mang
+      temp /= 10;    // 25 / 10 = 2
+   }
+}
+
+void quetLed(CHAR soLed)
+{
+   for(INT i = 0; i < 25; i++)
+   {
+      for(INT j = 0; j < soLed; j++)
+      {
+         CHAR data;
+         data = input_d();
+         data = maQuet[j];
+         output_c(maLed[chuSo[j]]);
+         delay_ms(100);
+         output_c(0xFF);
+      }
+   }
+}
+
+void main()
+{
+   output_c (0x00); //tat het port c chong nhieu
+   set_tris_c (0); //configues
+   WHILE (TRUE)
+   {
+      for (INT i = 0; i <= 99; i++)
+      {
+         tachSo (i, 2);
+         quetLed (2) ;
+      }
+   }
+}
+

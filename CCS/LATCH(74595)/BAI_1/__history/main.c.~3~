@@ -1,0 +1,25 @@
+#include <main.h>
+#define ser pin_c0
+#define sck pin_c1
+#define rck pin_c2
+
+void xuat_1byte(unsigned int8 xuatbyte)
+{
+   #bit bser = xuatbyte.7
+   for(unsigned int8 i = 0; i < 8; i++)
+   {
+      output_bit(ser, bser);
+      output_low(sck); output_high(sck);
+      xuatbyte <<= 1;
+   }
+}
+void main()
+{
+   set_tris_c(0);
+   
+   while(TRUE)
+   {
+      //TODO: User Code
+   }
+
+}

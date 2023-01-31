@@ -1,0 +1,198 @@
+CCS PCM C Compiler, Version 5.015, 5967               10-Thg3-22 19:25
+
+               Filename:   C:\D\BT VXL\2_1\2_1_(CCS)\main.lst
+
+               ROM used:   138 words (2%)
+                           Largest free fragment is 2048
+               RAM used:   6 (1%) at main() level
+                           25 (2%) worst case
+               Stack used: 1 locations
+               Stack size: 16
+
+*
+0000:  MOVLP  00
+0001:  GOTO   01D
+0002:  NOP
+.................... #include <main.h> 
+.................... #include <16F1787.h> 
+.................... //////////// Standard Header file for the PIC16F1787 device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2013 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC16F1787 
+0003:  BRW
+0004:  RETLW  40
+0005:  RETLW  79
+0006:  RETLW  24
+0007:  RETLW  30
+0008:  RETLW  19
+0009:  RETLW  12
+000A:  RETLW  02
+000B:  RETLW  78
+000C:  RETLW  00
+000D:  RETLW  10
+....................  
+.................... #list 
+....................  
+.................... #device ADC=16 
+....................  
+.................... #FUSES NOWDT                    //No Watch Dog Timer 
+.................... #FUSES NOBROWNOUT               //No brownout reset 
+.................... #FUSES NOLVP                    //No low voltage prgming, B3(PIC16) or B5(PIC18) used for I/O 
+....................  
+.................... #use delay(internal=1000000) 
+000E:  MOVLW  20
+000F:  MOVWF  05
+0010:  MOVLW  09
+0011:  MOVWF  04
+0012:  MOVF   00,W
+0013:  BTFSC  03.2
+0014:  GOTO   01B
+0015:  MOVLW  52
+0016:  MOVWF  77
+0017:  DECFSZ 77,F
+0018:  GOTO   017
+0019:  DECFSZ 00,F
+001A:  GOTO   015
+001B:  MOVLP  00
+001C:  GOTO   076 (RETURN)
+....................  
+....................  
+.................... const UNSIGNED char so[10] = {0x40, 0x79, 0x24, 0x30, 0x19, 0x12, 0x02, 0x78, 0x00, 0x10}; 
+.................... void main() 
+001D:  MOVLW  5A
+001E:  MOVLB  01
+001F:  MOVWF  19
+0020:  MOVLB  03
+0021:  CLRF   0C
+0022:  CLRF   0D
+0023:  CLRF   0F
+0024:  CLRF   10
+0025:  MOVLB  02
+0026:  CLRF   12
+0027:  CLRF   11
+.................... { 
+....................    set_tris_c(0); 
+0028:  MOVLW  00
+0029:  TRIS   7
+....................    set_tris_d(0); 
+002A:  MOVLB  01
+002B:  MOVWF  0F
+....................    while(TRUE) 
+....................    { 
+....................        for(int32 k = 0; k < 10; k++) 
+002C:  MOVLB  00
+002D:  CLRF   24
+002E:  CLRF   23
+002F:  CLRF   22
+0030:  CLRF   21
+0031:  MOVF   24,F
+0032:  BTFSS  03.2
+0033:  GOTO   088
+0034:  MOVF   23,F
+0035:  BTFSS  03.2
+0036:  GOTO   088
+0037:  MOVF   22,F
+0038:  BTFSS  03.2
+0039:  GOTO   088
+003A:  MOVF   21,W
+003B:  SUBLW  09
+003C:  BTFSS  03.0
+003D:  GOTO   088
+....................        { 
+....................            output_c(so[k]); 
+003E:  MOVF   21,W
+003F:  MOVWF  77
+0040:  MOVF   22,W
+0041:  MOVWF  78
+0042:  MOVF   23,W
+0043:  MOVWF  79
+0044:  MOVF   24,W
+0045:  MOVWF  7A
+0046:  MOVF   21,W
+0047:  CALL   003
+0048:  MOVWF  29
+0049:  MOVLB  01
+004A:  CLRF   0E
+004B:  MOVLB  00
+004C:  MOVF   29,W
+004D:  MOVLB  02
+004E:  MOVWF  0E
+....................            for(int32 f = 0; f < 10; f++) 
+004F:  MOVLB  00
+0050:  CLRF   28
+0051:  CLRF   27
+0052:  CLRF   26
+0053:  CLRF   25
+0054:  MOVF   28,F
+0055:  BTFSS  03.2
+0056:  GOTO   07F
+0057:  MOVF   27,F
+0058:  BTFSS  03.2
+0059:  GOTO   07F
+005A:  MOVF   26,F
+005B:  BTFSS  03.2
+005C:  GOTO   07F
+005D:  MOVF   25,W
+005E:  SUBLW  09
+005F:  BTFSS  03.0
+0060:  GOTO   07F
+....................            { 
+....................               output_d(so[f]); 
+0061:  MOVF   25,W
+0062:  MOVWF  77
+0063:  MOVF   26,W
+0064:  MOVWF  78
+0065:  MOVF   27,W
+0066:  MOVWF  79
+0067:  MOVF   28,W
+0068:  MOVWF  7A
+0069:  MOVF   25,W
+006A:  CALL   003
+006B:  MOVWF  29
+006C:  MOVLB  01
+006D:  CLRF   0F
+006E:  MOVLB  00
+006F:  MOVF   29,W
+0070:  MOVLB  02
+0071:  MOVWF  0F
+....................               delay_ms(200); 
+0072:  MOVLW  C8
+0073:  MOVLB  00
+0074:  MOVWF  29
+0075:  GOTO   00E
+0076:  MOVLW  01
+0077:  ADDWF  25,F
+0078:  BTFSC  03.0
+0079:  INCF   26,F
+007A:  BTFSC  03.2
+007B:  INCF   27,F
+007C:  BTFSC  03.2
+007D:  INCF   28,F
+007E:  GOTO   054
+....................            } 
+007F:  MOVLW  01
+0080:  ADDWF  21,F
+0081:  BTFSC  03.0
+0082:  INCF   22,F
+0083:  BTFSC  03.2
+0084:  INCF   23,F
+0085:  BTFSC  03.2
+0086:  INCF   24,F
+0087:  GOTO   031
+....................        } 
+0088:  GOTO   02D
+....................    } 
+....................  
+.................... } 
+0089:  SLEEP
+
+Configuration Fuses:
+   Word  1: 39C4   INTRC_IO NOWDT PUT MCLR NOPROTECT NOCPD NOBROWNOUT NOCLKOUT IESO FCMEN
+   Word  2: 1EFF   NOWRT NOVCAP PLL_SW STVREN BORV19 NOLPBOR NODEBUG NOLVP

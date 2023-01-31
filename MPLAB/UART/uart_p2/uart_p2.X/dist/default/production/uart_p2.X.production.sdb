@@ -1,0 +1,277 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F887 ]
+[d frameptr 0 ]
+"477 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+[v _printf printf `(i  1 e 2 0 ]
+"43 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\rand.c
+[v _srand srand `(v  1 e 1 0 ]
+"12
+[v _rand rand `(i  1 e 2 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"36 C:\PIC16F887\MPLAB\UART\uart_p2\uart_p2.X\newmain.c
+[v _GetRandom GetRandom `(uc  1 e 1 0 ]
+"39
+[v _Initialize_UART Initialize_UART `(v  1 e 1 0 ]
+"52
+[v _UART_send_char UART_send_char `(v  1 e 1 0 ]
+"72
+[v _putch putch `(v  1 e 1 0 ]
+"77
+[v _main main `(v  1 e 1 0 ]
+"1134 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f887.h
+[v _TXREG TXREG `VEuc  1 e 1 @25 ]
+"1141
+[v _RCREG RCREG `VEuc  1 e 1 @26 ]
+"2643
+[v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
+"3700
+[v _BRGH BRGH `VEb  1 e 0 @1218 ]
+"3841
+[v _CREN CREN `VEb  1 e 0 @196 ]
+"4006
+[v _OERR OERR `VEb  1 e 0 @193 ]
+"4180
+[v _RCIF RCIF `VEb  1 e 0 @101 ]
+"4234
+[v _RX9 RX9 `VEb  1 e 0 @198 ]
+"4264
+[v _SPEN SPEN `VEb  1 e 0 @199 ]
+"4318
+[v _SYNC SYNC `VEb  1 e 0 @1220 ]
+"4471
+[v _TRISC6 TRISC6 `VEb  1 e 0 @1086 ]
+"4474
+[v _TRISC7 TRISC7 `VEb  1 e 0 @1087 ]
+"4534
+[v _TX9 TX9 `VEb  1 e 0 @1222 ]
+"4543
+[v _TXEN TXEN `VEb  1 e 0 @1221 ]
+"4549
+[v _TXIF TXIF `VEb  1 e 0 @100 ]
+"358 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+[v _dpowers dpowers `DC[5]ui  1 s 10 dpowers ]
+"3 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\rand.c
+[v _randx randx `l  1 s 4 randx ]
+"35 C:\PIC16F887\MPLAB\UART\uart_p2\uart_p2.X\newmain.c
+[v _randomNum randomNum `uc  1 e 1 0 ]
+"77
+[v _main main `(v  1 e 1 0 ]
+{
+"88
+} 0
+"6 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\rand.c
+[v _srand srand `(v  1 e 1 0 ]
+{
+[v srand@x x `ui  1 p 2 0 ]
+"9
+} 0
+"477 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+[v _printf printf `(i  1 e 2 0 ]
+{
+[v printf@f f `*.24DCuc  1 a 1 wreg ]
+"545
+[v printf@val val `ui  1 a 2 9 ]
+"512
+[v printf@c c `uc  1 a 1 11 ]
+"521
+[v printf@prec prec `c  1 a 1 7 ]
+"525
+[v printf@flag flag `uc  1 a 1 6 ]
+"479
+[v printf@ap ap `[1]*.4v  1 a 1 5 ]
+"477
+[v printf@f f `*.24DCuc  1 a 1 wreg ]
+"550
+[v printf@f f `*.24DCuc  1 a 1 8 ]
+"1567
+} 0
+"72 C:\PIC16F887\MPLAB\UART\uart_p2\uart_p2.X\newmain.c
+[v _putch putch `(v  1 e 1 0 ]
+{
+[v putch@data data `uc  1 a 1 wreg ]
+[v putch@data data `uc  1 a 1 wreg ]
+[v putch@data data `uc  1 a 1 1 ]
+"76
+} 0
+"52
+[v _UART_send_char UART_send_char `(v  1 e 1 0 ]
+{
+[v UART_send_char@bt bt `uc  1 a 1 wreg ]
+[v UART_send_char@bt bt `uc  1 a 1 wreg ]
+[v UART_send_char@bt bt `uc  1 a 1 0 ]
+"56
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwmod@counter counter `uc  1 a 1 13 ]
+"5
+[v ___lwmod@divisor divisor `ui  1 p 2 8 ]
+[v ___lwmod@dividend dividend `ui  1 p 2 10 ]
+"25
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwdiv@quotient quotient `ui  1 a 2 5 ]
+"11
+[v ___lwdiv@counter counter `uc  1 a 1 7 ]
+"5
+[v ___lwdiv@divisor divisor `ui  1 p 2 0 ]
+[v ___lwdiv@dividend dividend `ui  1 p 2 2 ]
+"30
+} 0
+"39 C:\PIC16F887\MPLAB\UART\uart_p2\uart_p2.X\newmain.c
+[v _Initialize_UART Initialize_UART `(v  1 e 1 0 ]
+{
+"51
+} 0
+"36
+[v _GetRandom GetRandom `(uc  1 e 1 0 ]
+{
+[v GetRandom@min min `uc  1 a 1 wreg ]
+[v GetRandom@min min `uc  1 a 1 wreg ]
+[v GetRandom@max max `uc  1 p 1 24 ]
+[v GetRandom@min min `uc  1 a 1 13 ]
+"38
+} 0
+"12 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\rand.c
+[v _rand rand `(i  1 e 2 0 ]
+{
+"17
+} 0
+"15 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+{
+"17
+[v ___lmul@product product `ul  1 a 4 9 ]
+"15
+[v ___lmul@multiplier multiplier `ul  1 p 4 0 ]
+[v ___lmul@multiplicand multiplicand `ul  1 p 4 4 ]
+"129
+} 0
+"10 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+{
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+"13
+[v ___xxtofl@arg arg `ul  1 a 4 17 ]
+"12
+[v ___xxtofl@exp exp `uc  1 a 1 16 ]
+"10
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+[v ___xxtofl@val val `l  1 p 4 7 ]
+"15
+[v ___xxtofl@sign sign `uc  1 a 1 15 ]
+"44
+} 0
+"43 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
+{
+"45
+[v ___fltol@exp1 exp1 `uc  1 a 1 23 ]
+[v ___fltol@sign1 sign1 `uc  1 a 1 22 ]
+"43
+[v ___fltol@f1 f1 `d  1 p 4 13 ]
+"70
+} 0
+"8 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+{
+[s S401 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+"13
+[s S406 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
+[u S409 . 4 `l 1 i 4 0 `d 1 f 4 0 `S401 1 fAsBytes 4 0 `S406 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S409  1 a 4 61 ]
+"12
+[v ___flmul@grs grs `ul  1 a 4 55 ]
+[s S478 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+"14
+[u S481 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S478 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S481  1 a 2 65 ]
+"10
+[v ___flmul@bexp bexp `uc  1 a 1 60 ]
+"11
+[v ___flmul@aexp aexp `uc  1 a 1 59 ]
+"9
+[v ___flmul@sign sign `uc  1 a 1 54 ]
+"8
+[v ___flmul@b b `d  1 p 4 41 ]
+[v ___flmul@a a `d  1 p 4 45 ]
+"205
+} 0
+"4 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+{
+[v __Umul8_16@multiplier multiplier `uc  1 a 1 wreg ]
+"6
+[v __Umul8_16@word_mpld word_mpld `ui  1 a 2 6 ]
+"5
+[v __Umul8_16@product product `ui  1 a 2 4 ]
+"4
+[v __Umul8_16@multiplier multiplier `uc  1 a 1 wreg ]
+[v __Umul8_16@multiplicand multiplicand `uc  1 p 1 0 ]
+[v __Umul8_16@multiplier multiplier `uc  1 a 1 8 ]
+"60
+} 0
+"8 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+{
+"21
+[v ___fldiv@grs grs `ul  1 a 4 7 ]
+"22
+[v ___fldiv@rem rem `ul  1 a 4 0 ]
+"20
+[v ___fldiv@new_exp new_exp `i  1 a 2 5 ]
+"19
+[v ___fldiv@aexp aexp `uc  1 a 1 12 ]
+"18
+[v ___fldiv@bexp bexp `uc  1 a 1 11 ]
+"16
+[v ___fldiv@sign sign `uc  1 a 1 4 ]
+"8
+[v ___fldiv@a a `d  1 p 4 67 ]
+[v ___fldiv@b b `d  1 p 4 71 ]
+"185
+} 0
+"10 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+{
+"17
+[v ___fladd@grs grs `uc  1 a 1 40 ]
+"15
+[v ___fladd@bexp bexp `uc  1 a 1 39 ]
+"16
+[v ___fladd@aexp aexp `uc  1 a 1 38 ]
+"13
+[v ___fladd@signs signs `uc  1 a 1 37 ]
+"10
+[v ___fladd@b b `d  1 p 4 21 ]
+[v ___fladd@a a `d  1 p 4 25 ]
+"237
+} 0

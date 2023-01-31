@@ -1,0 +1,13 @@
+#include <main.h>
+
+void main()
+{
+	setup_timer_0(RTCC_EXT_L_TO_H|RTCC_DIV_1|RTCC_8_bit);		//51,2 us overflow
+
+
+	while(TRUE)
+	{
+		//TODO: User Code
+	}
+
+}

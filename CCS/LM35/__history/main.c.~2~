@@ -1,0 +1,11 @@
+#include <main.h>
+//xem lai device adc = 16 thu xem
+void main()
+{
+
+   while(TRUE)
+   {
+      
+   }
+
+}

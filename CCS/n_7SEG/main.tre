@@ -1,0 +1,9 @@
+ÀÄmain
+   ÀÄMAIN  0/82  Ram=0
+      ÃÄ@cinit1  (Inline)  Ram=0
+      ÃÄtachSo  0/106  Ram=17
+      ³  ÃÄ@DIV3232  0/79  Ram=13
+      ³  ÃÄ@const762  0/14  Ram=0
+      ³  ÀÄ@DIV3232  0/79  Ram=13
+      ÀÄhienthi  0/70  Ram=1
+         ÀÄ@delay_ms1  (Inline)  Ram=1

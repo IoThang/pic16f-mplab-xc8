@@ -1,0 +1,10 @@
+>>> Warning 203 "main.c" Line 10(1,1): Condition always TRUE
+>>> Warning 203 "main.c" Line 27(1,1): Condition always TRUE
+>>> Warning 203 "main.c" Line 44(1,1): Condition always TRUE
+>>> Warning 203 "main.c" Line 62(1,1): Condition always TRUE
+>>> Warning 203 "main.c" Line 76(1,1): Condition always TRUE
+*** Error 12 "main.c" Line 93(21,23): Undefined identifier   ko
+*** Error 76 "main.c" Line 108(4,12): Expect ;
+*** Error 58 "main.c" Line 110(1,2): Expecting a close paren
+      3 Errors,  5 Warnings.
+Build Failed.

@@ -1,0 +1,39 @@
+
+#include <main.h>
+const UNSIGNED char maLed[]={0x40, 0x79, 0x24, 0x30, 0x19, 0x12, 0x02, 0x78, 0x00, 0x10};
+
+void count()
+{
+   signed char i;
+   FOR (i = 0; i <= 9; i++)
+   {
+      output_c (maLed[i]);
+      delay_ms (500);
+   }
+}
+
+void countDown()
+{
+   signed char j;
+   FOR (j = 9; j >= 0; j--)
+   {
+      output_c (maLed[j]);
+      delay_ms (500);
+   }
+}
+
+void main()
+{
+   output_c (0x00); //tat het port c chong nhieu
+   set_tris_c (0); //configues
+   WHILE (TRUE)
+   {
+      count () ;
+      output_c (0xFF); //Delete Screen in 300ms
+      delay_ms (300) ;
+      countDown () ;
+      output_c (0xFF); //Delete Screen in 300ms
+      delay_ms (300) ;
+   }
+}
+

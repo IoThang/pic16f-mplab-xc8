@@ -1,0 +1,63 @@
+#include <main.h>
+const UNSIGNED char so[10] = {0x40, 0x79, 0x24, 0x30, 0x19, 0x12, 0x02, 0x78, 0x00, 0x10};
+void countA()
+{
+   for(int32 i = 0; i < 10; i++)
+   {
+      output_a(so[i]);
+      delay_ms(250);
+   }
+}
+void countB()
+{
+   for(int32 i = 0; i < 10; i++)
+   {
+      output_b(so[i]);
+      delay_ms(250);
+   }
+}
+void countC()
+{
+   for(int32 i = 0; i < 10; i++)
+   {
+      output_c(so[i]);
+      delay_ms(500);
+   }
+}
+void countD()
+{
+   for(int32 i = 0; i < 10; i++)
+   {
+      output_d(so[i]);
+      delay_ms(500);
+   }
+}
+void main()
+{
+   set_tris_a(0);
+   set_tris_b(0);
+   set_tris_c(0);
+   set_tris_d(0);
+   while(TRUE)
+   {
+     for(int32 i = 0; i < 6; i++)
+     {
+         output_a(so[i]);
+         for(int32 j = 0; j < 10; j++)
+         {
+            output_b(so[j]);
+            delay_ms(100);
+            /*for(int32 k = 0; k < 6; k++)
+            {
+               output_c(so[k]);
+               for(int32 f = 0; f < 10; f++)
+               {
+                  output_d(so[f]);
+                  delay_ms(100);
+               }
+            }*/
+         }
+     }
+   }
+
+}

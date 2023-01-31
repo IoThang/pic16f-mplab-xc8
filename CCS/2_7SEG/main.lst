@@ -1,0 +1,282 @@
+CCS PCM C Compiler, Version 5.015, 5967               27-Thg2-22 17:24
+
+               Filename:   C:\PIC16F887\2_7SEG\main.lst
+
+               ROM used:   193 words (2%)
+                           Largest free fragment is 2048
+               RAM used:   13 (4%) at main() level
+                           22 (6%) worst case
+               Stack used: 2 locations
+               Stack size: 8
+
+*
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   08D
+0003:  NOP
+....................  
+.................... #include <main.h> 
+.................... #include <16F887.h> 
+.................... //////////// Standard Header file for the PIC16F887 device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2013 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC16F887 
+0004:  BCF    0A.0
+0005:  BCF    0A.1
+0006:  BCF    0A.2
+0007:  ADDWF  02,F
+0008:  RETLW  C0
+0009:  RETLW  F9
+000A:  RETLW  A4
+000B:  RETLW  B0
+000C:  RETLW  99
+000D:  RETLW  92
+000E:  RETLW  82
+000F:  RETLW  F8
+0010:  RETLW  80
+0011:  RETLW  90
+0012:  BCF    0A.0
+0013:  BCF    0A.1
+0014:  BCF    0A.2
+0015:  ADDWF  02,F
+0016:  RETLW  FD
+0017:  RETLW  FE
+0018:  MOVF   2F,W
+0019:  CLRF   78
+001A:  SUBWF  2E,W
+001B:  BTFSC  03.0
+001C:  GOTO   020
+001D:  MOVF   2E,W
+001E:  MOVWF  77
+001F:  GOTO   02C
+0020:  CLRF   77
+0021:  MOVLW  08
+0022:  MOVWF  30
+0023:  RLF    2E,F
+0024:  RLF    77,F
+0025:  MOVF   2F,W
+0026:  SUBWF  77,W
+0027:  BTFSC  03.0
+0028:  MOVWF  77
+0029:  RLF    78,F
+002A:  DECFSZ 30,F
+002B:  GOTO   023
+002C:  RETURN
+....................  
+.................... #list 
+....................  
+.................... #device ADC=16 
+....................  
+.................... #FUSES NOWDT                 	//No Watch Dog Timer 
+.................... #FUSES NOBROWNOUT            	//No brownout reset 
+.................... #FUSES NOLVP                 	//No low voltage prgming, B3(PIC16) or B5(PIC18) used for I/O 
+....................  
+.................... #use delay(crystal=4000000) 
+*
+006B:  MOVLW  2C
+006C:  MOVWF  04
+006D:  BCF    03.7
+006E:  MOVF   00,W
+006F:  BTFSC  03.2
+0070:  GOTO   07F
+0071:  MOVLW  01
+0072:  MOVWF  78
+0073:  CLRF   77
+0074:  DECFSZ 77,F
+0075:  GOTO   074
+0076:  DECFSZ 78,F
+0077:  GOTO   073
+0078:  MOVLW  4A
+0079:  MOVWF  77
+007A:  DECFSZ 77,F
+007B:  GOTO   07A
+007C:  GOTO   07D
+007D:  DECFSZ 00,F
+007E:  GOTO   071
+....................  
+....................  
+.................... #define BUTTON PIN_D0 
+....................  
+.................... unsigned CHAR chuSo[7]; 
+....................  
+.................... const UNSIGNED char maLed[]={0xC0, 0xF9, 0xA4, 0xB0, 0x99, 0x92, 0x82, 0b11111000, 0x80, 0x90}; 
+.................... const UNSIGNED char maQuet[] = {0b11111101, 0b11111110}; 
+.................... void tachSo(UNSIGNED char temp, char soLed) 
+.................... { 
+....................    for(INT i = 0; i < soLed; i++) 
+*
+002D:  CLRF   2B
+002E:  MOVF   2A,W
+002F:  SUBWF  2B,W
+0030:  BTFSC  03.0
+0031:  GOTO   046
+....................    { 
+....................       chuSo[i] = temp % 10;   // 25 % 10 = 5  => Them vao mang 
+0032:  MOVLW  20
+0033:  ADDWF  2B,W
+0034:  MOVWF  04
+0035:  BCF    03.7
+0036:  MOVF   29,W
+0037:  MOVWF  2E
+0038:  MOVLW  0A
+0039:  MOVWF  2F
+003A:  CALL   018
+003B:  MOVF   77,W
+003C:  MOVWF  00
+....................       temp /= 10;    // 25 / 10 = 2 
+003D:  MOVF   29,W
+003E:  MOVWF  2E
+003F:  MOVLW  0A
+0040:  MOVWF  2F
+0041:  CALL   018
+0042:  MOVF   78,W
+0043:  MOVWF  29
+0044:  INCF   2B,F
+0045:  GOTO   02E
+....................    } 
+0046:  BCF    0A.3
+0047:  BCF    0A.4
+0048:  GOTO   0BA (RETURN)
+.................... } 
+....................  
+.................... void quetLed(CHAR soLed) 
+.................... { 
+....................    for(INT i = 0; i < 25; i++) 
+0049:  CLRF   2A
+004A:  MOVF   2A,W
+004B:  SUBLW  18
+004C:  BTFSS  03.0
+004D:  GOTO   08A
+....................    { 
+....................       for(INT j = 0; j < soLed; j++) 
+004E:  CLRF   2B
+004F:  MOVF   29,W
+0050:  SUBWF  2B,W
+0051:  BTFSC  03.0
+0052:  GOTO   088
+....................       { 
+....................          output_d(maQuet[j]); 
+0053:  MOVF   2B,W
+0054:  CALL   012
+0055:  MOVWF  2C
+0056:  BSF    03.5
+0057:  CLRF   08
+0058:  BCF    03.5
+0059:  MOVF   2C,W
+005A:  MOVWF  08
+....................          output_c(maLed[chuSo[j]]); 
+005B:  MOVLW  20
+005C:  ADDWF  2B,W
+005D:  MOVWF  04
+005E:  BCF    03.7
+005F:  MOVF   00,W
+0060:  CALL   004
+0061:  MOVWF  2C
+0062:  MOVLW  00
+0063:  MOVWF  27
+0064:  BSF    03.5
+0065:  CLRF   07
+0066:  BCF    03.5
+0067:  MOVF   2C,W
+0068:  MOVWF  07
+....................          delay_ms(100); 
+0069:  MOVLW  64
+006A:  MOVWF  2C
+....................          output_c(0xFF); 
+*
+007F:  MOVLW  00
+0080:  MOVWF  27
+0081:  BSF    03.5
+0082:  CLRF   07
+0083:  MOVLW  FF
+0084:  BCF    03.5
+0085:  MOVWF  07
+0086:  INCF   2B,F
+0087:  GOTO   04F
+....................       } 
+0088:  INCF   2A,F
+0089:  GOTO   04A
+....................    } 
+008A:  BCF    0A.3
+008B:  BCF    0A.4
+008C:  GOTO   0BD (RETURN)
+.................... } 
+....................  
+.................... void main() 
+008D:  MOVF   03,W
+008E:  ANDLW  1F
+008F:  MOVWF  03
+0090:  MOVLW  FF
+0091:  MOVWF  27
+0092:  BSF    03.5
+0093:  BSF    03.6
+0094:  MOVF   09,W
+0095:  ANDLW  C0
+0096:  MOVWF  09
+0097:  BCF    03.6
+0098:  BCF    1F.4
+0099:  BCF    1F.5
+009A:  MOVLW  00
+009B:  BSF    03.6
+009C:  MOVWF  08
+009D:  BCF    03.5
+009E:  CLRF   07
+009F:  CLRF   08
+00A0:  CLRF   09
+00A1:  BCF    03.7
+.................... { 
+....................    output_c (0x00); //tat het port c chong nhieu 
+00A2:  MOVLW  00
+00A3:  BCF    03.6
+00A4:  MOVWF  27
+00A5:  BSF    03.5
+00A6:  CLRF   07
+00A7:  BCF    03.5
+00A8:  CLRF   07
+....................    set_tris_c (0); //configues 
+00A9:  BSF    03.5
+00AA:  MOVWF  07
+00AB:  BCF    03.5
+00AC:  MOVWF  27
+....................    set_tris_d (0); 
+00AD:  BSF    03.5
+00AE:  MOVWF  08
+....................    WHILE (TRUE) 
+....................    { 
+....................       for (INT i = 0; i <= 99; i++) 
+00AF:  BCF    03.5
+00B0:  CLRF   28
+00B1:  MOVF   28,W
+00B2:  SUBLW  63
+00B3:  BTFSS  03.0
+00B4:  GOTO   0BF
+....................       { 
+....................          tachSo (i, 2); 
+00B5:  MOVF   28,W
+00B6:  MOVWF  29
+00B7:  MOVLW  02
+00B8:  MOVWF  2A
+00B9:  GOTO   02D
+....................          quetLed (2) ; 
+00BA:  MOVLW  02
+00BB:  MOVWF  29
+00BC:  GOTO   049
+00BD:  INCF   28,F
+00BE:  GOTO   0B1
+....................       } 
+00BF:  GOTO   0B0
+....................    } 
+.................... } 
+....................  
+00C0:  SLEEP
+
+Configuration Fuses:
+   Word  1: 2CE1   XT NOWDT PUT MCLR NOPROTECT NOCPD NOBROWNOUT IESO FCMEN NOLVP NODEBUG
+   Word  2: 3FFF   BORV40 NOWRT

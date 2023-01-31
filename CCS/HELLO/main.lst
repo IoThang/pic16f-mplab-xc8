@@ -1,0 +1,303 @@
+CCS PCM C Compiler, Version 5.015, 5967               28-Thg2-22 22:12
+
+               Filename:   C:\PIC16F887\HELLO\main.lst
+
+               ROM used:   195 words (2%)
+                           Largest free fragment is 2048
+               RAM used:   17 (5%) at main() level
+                           21 (6%) worst case
+               Stack used: 1 locations
+               Stack size: 8
+
+*
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   05C
+0003:  NOP
+.................... //cocacola: https://youtu.be/Jds6iRi88Lw 
+.................... //hello: https://youtu.be/fCqUL3hBUeg 
+.................... #include <main.h> 
+.................... #include <16F887.h> 
+.................... //////////// Standard Header file for the PIC16F887 device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2013 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC16F887 
+0004:  BCF    0A.0
+0005:  BCF    0A.1
+0006:  BCF    0A.2
+0007:  ADDWF  02,F
+0008:  RETLW  FF
+0009:  RETLW  FF
+000A:  RETLW  FF
+000B:  RETLW  FF
+000C:  RETLW  FF
+000D:  RETLW  FF
+000E:  RETLW  FF
+000F:  RETLW  FF
+0010:  RETLW  C6
+0011:  RETLW  C0
+0012:  RETLW  C6
+0013:  RETLW  88
+0014:  RETLW  C6
+0015:  RETLW  C0
+0016:  RETLW  C7
+0017:  RETLW  88
+....................  
+.................... #list 
+....................  
+.................... #device ADC=16 
+....................  
+.................... #FUSES NOWDT                 	//No Watch Dog Timer 
+.................... #FUSES NOBROWNOUT            	//No brownout reset 
+.................... #FUSES NOLVP                 	//No low voltage prgming, B3(PIC16) or B5(PIC18) used for I/O 
+....................  
+.................... #use delay(crystal=4000000) 
+*
+0038:  MOVLW  2F
+0039:  MOVWF  04
+003A:  BCF    03.7
+003B:  MOVF   00,W
+003C:  BTFSC  03.2
+003D:  GOTO   04C
+003E:  MOVLW  01
+003F:  MOVWF  78
+0040:  CLRF   77
+0041:  DECFSZ 77,F
+0042:  GOTO   041
+0043:  DECFSZ 78,F
+0044:  GOTO   040
+0045:  MOVLW  4A
+0046:  MOVWF  77
+0047:  DECFSZ 77,F
+0048:  GOTO   047
+0049:  GOTO   04A
+004A:  DECFSZ 00,F
+004B:  GOTO   03E
+....................  
+....................  
+.................... const UNSIGNED char hello[21]={0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF, 0xFF, 
+....................                               0x89, 0x86, 0xC7, 0xC7, 0xC0, 
+....................                               0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF, 0xFF}; 
+.................... const UNSIGNED char cocacola[16] = {0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF, 0xFF, 
+....................                                  0xC6, 0xC0, 0xC6, 0x88,0xC6, 0xC0,0xC7, 0x88}; 
+.................... UNSIGNED char DLHT[8] = {0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF, 0xFF}; 
+*
+0071:  MOVLW  FF
+0072:  BCF    03.6
+0073:  MOVWF  20
+0074:  MOVWF  21
+0075:  MOVWF  22
+0076:  MOVWF  23
+0077:  MOVWF  24
+0078:  MOVWF  25
+0079:  MOVWF  26
+007A:  MOVWF  27
+.................... void quetLed() 
+.................... { 
+....................    for(unsigned char j = 0; j < 10; j++) 
+*
+0018:  CLRF   2C
+0019:  MOVF   2C,W
+001A:  SUBLW  09
+001B:  BTFSS  03.0
+001C:  GOTO   05B
+....................       { 
+....................          unsigned char quet = 0b11111110; 
+001D:  MOVLW  FE
+001E:  MOVWF  2D
+....................          for(unsigned char i = 0; i < 8; i++) 
+001F:  CLRF   2E
+0020:  MOVF   2E,W
+0021:  SUBLW  07
+0022:  BTFSS  03.0
+0023:  GOTO   059
+....................          { 
+....................             output_d(quet); 
+0024:  BSF    03.5
+0025:  CLRF   08
+0026:  BCF    03.5
+0027:  MOVF   2D,W
+0028:  MOVWF  08
+....................             output_c(DLHT[i]); 
+0029:  MOVLW  20
+002A:  ADDWF  2E,W
+002B:  MOVWF  04
+002C:  BCF    03.7
+002D:  MOVF   00,W
+002E:  MOVWF  2F
+002F:  MOVLW  00
+0030:  MOVWF  28
+0031:  BSF    03.5
+0032:  CLRF   07
+0033:  BCF    03.5
+0034:  MOVF   2F,W
+0035:  MOVWF  07
+....................             delay_ms(4); 
+0036:  MOVLW  04
+0037:  MOVWF  2F
+....................             output_c(0xFF); 
+*
+004C:  MOVLW  00
+004D:  MOVWF  28
+004E:  BSF    03.5
+004F:  CLRF   07
+0050:  MOVLW  FF
+0051:  BCF    03.5
+0052:  MOVWF  07
+....................             quet = (quet << 1) + 1; 
+0053:  BCF    03.0
+0054:  RLF    2D,W
+0055:  ADDLW  01
+0056:  MOVWF  2D
+0057:  INCF   2E,F
+0058:  GOTO   020
+....................          } 
+0059:  INCF   2C,F
+005A:  GOTO   019
+....................       } 
+005B:  RETURN
+.................... } 
+....................  
+.................... void main() 
+005C:  MOVF   03,W
+005D:  ANDLW  1F
+005E:  MOVWF  03
+005F:  MOVLW  FF
+0060:  MOVWF  28
+0061:  BSF    03.5
+0062:  BSF    03.6
+0063:  MOVF   09,W
+0064:  ANDLW  C0
+0065:  MOVWF  09
+0066:  BCF    03.6
+0067:  BCF    1F.4
+0068:  BCF    1F.5
+0069:  MOVLW  00
+006A:  BSF    03.6
+006B:  MOVWF  08
+006C:  BCF    03.5
+006D:  CLRF   07
+006E:  CLRF   08
+006F:  CLRF   09
+0070:  BCF    03.7
+.................... { 
+....................    //output_c (0x00); //tat het port c chong nhieu 
+....................    set_tris_c (0); //configues 
+*
+007B:  MOVLW  00
+007C:  BSF    03.5
+007D:  MOVWF  07
+007E:  BCF    03.5
+007F:  MOVWF  28
+....................    set_tris_d (0); 
+0080:  BSF    03.5
+0081:  MOVWF  08
+....................    WHILE (TRUE) 
+....................    { 
+....................       /*for(unsigned int8 i = 0; i < 14; i++) 
+....................       { 
+....................          for(unsigned int8 j = 0; j < 8; j++) 
+....................          { 
+....................             DLHT[j] = hello[j + i]; 
+....................          } 
+....................          quetLed(); 
+....................       }*/ 
+....................       for(unsigned int8 k = 0; k < 9; k++) 
+0082:  BCF    03.5
+0083:  CLRF   29
+0084:  MOVF   29,W
+0085:  SUBLW  08
+0086:  BTFSS  03.0
+0087:  GOTO   09B
+....................       { 
+....................          for(unsigned int8 h = 0; h < 8; h++) 
+0088:  CLRF   2A
+0089:  MOVF   2A,W
+008A:  SUBLW  07
+008B:  BTFSS  03.0
+008C:  GOTO   098
+....................          { 
+....................             DLHT[h] = cocacola[h + k]; 
+008D:  MOVLW  20
+008E:  ADDWF  2A,W
+008F:  MOVWF  04
+0090:  BCF    03.7
+0091:  MOVF   29,W
+0092:  ADDWF  2A,W
+0093:  CALL   004
+0094:  MOVWF  78
+0095:  MOVWF  00
+0096:  INCF   2A,F
+0097:  GOTO   089
+....................          } 
+....................          quetLed(); 
+0098:  CALL   018
+0099:  INCF   29,F
+009A:  GOTO   084
+....................       } 
+....................       for(unsigned int8 n = 0; n < 5; n++) //lam cho led chop tat (blink) 
+009B:  CLRF   2B
+009C:  MOVF   2B,W
+009D:  SUBLW  04
+009E:  BTFSS  03.0
+009F:  GOTO   0C1
+....................       { 
+....................          for(k = 0; k < 9; k++) 
+00A0:  CLRF   29
+00A1:  MOVF   29,W
+00A2:  SUBLW  08
+00A3:  BTFSS  03.0
+00A4:  GOTO   0AD
+....................          { 
+....................             DLHT[k] = 0xFF; 
+00A5:  MOVLW  20
+00A6:  ADDWF  29,W
+00A7:  MOVWF  04
+00A8:  BCF    03.7
+00A9:  MOVLW  FF
+00AA:  MOVWF  00
+00AB:  INCF   29,F
+00AC:  GOTO   0A1
+....................          } 
+....................          quetLed(); 
+00AD:  CALL   018
+....................          for(k = 0; k < 9; k++) 
+00AE:  CLRF   29
+00AF:  MOVF   29,W
+00B0:  SUBLW  08
+00B1:  BTFSS  03.0
+00B2:  GOTO   0BE
+....................          { 
+....................             DLHT[k] = cocacola[k + 8]; 
+00B3:  MOVLW  20
+00B4:  ADDWF  29,W
+00B5:  MOVWF  04
+00B6:  BCF    03.7
+00B7:  MOVLW  08
+00B8:  ADDWF  29,W
+00B9:  CALL   004
+00BA:  MOVWF  78
+00BB:  MOVWF  00
+00BC:  INCF   29,F
+00BD:  GOTO   0AF
+....................          } 
+....................          quetLed(); 
+00BE:  CALL   018
+00BF:  INCF   2B,F
+00C0:  GOTO   09C
+....................       }  
+00C1:  GOTO   083
+....................    } 
+.................... } 
+00C2:  SLEEP
+
+Configuration Fuses:
+   Word  1: 2CE1   XT NOWDT PUT MCLR NOPROTECT NOCPD NOBROWNOUT IESO FCMEN NOLVP NODEBUG
+   Word  2: 3FFF   BORV40 NOWRT

@@ -1,0 +1,16 @@
+ÀÄmain
+   ÀÄMAIN  0/89  Ram=1
+      ÃÄ@cinit1  (Inline)  Ram=0
+      ÃÄHIENTHI_DELAY  0/56  Ram=2
+      ³  ÃÄ@DIV88  0/21  Ram=3
+      ³  ÃÄ@const624  0/14  Ram=0
+      ³  ÃÄ@delay_ms1  0/20  Ram=1
+      ³  ÃÄ@DIV88  0/21  Ram=3
+      ³  ÃÄ@const624  0/14  Ram=0
+      ³  ÀÄ@delay_ms1  0/20  Ram=1
+      ÃÄHIENTHI_DELAY  0/56  Ram=2
+      ³  ÀÄ*
+      ÃÄHIENTHI_DELAY  0/56  Ram=2
+      ³  ÀÄ*
+      ÀÄHIENTHI_DELAY  0/56  Ram=2
+         ÀÄ*

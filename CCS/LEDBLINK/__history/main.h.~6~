@@ -1,0 +1,17 @@
+#include <16F887.h>
+#device ADC=16
+#FUSES HS //Declare crystal
+#FUSES NOWDT                    //No Watch Dog Timer
+#FUSES NOBROWNOUT               //No brownout reset
+#FUSES NOLVP                    //No low voltage prgming, B3(PIC16) or B5(PIC18) used for I/O
+#use fast_io(b)
+#byte portb=0x6
+#use delay(crystal=4000000)
+#Define LED_1(x)  output_bit(PIN_B0, x)
+#Define LED_2(x)  output_bit(PIN_B1, x)
+#Define LED_3(x)  output_bit(PIN_B2, x)
+#Define LED_4(x)  output_bit(PIN_B3, x)
+#Define LED_5(x)  output_bit(PIN_B4, x)
+#Define LED_6(x)  output_bit(PIN_B5, x)
+#Define LED_7(x)  output_bit(PIN_B6, x)
+#Define LED_8(x)  output_bit(PIN_B7, x)

@@ -1,0 +1,245 @@
+CCS PCM C Compiler, Version 5.015, 5967               08-Thg3-22 15:13
+
+               Filename:   C:\PIC16F887\CCS\TIMER\main.lst
+
+               ROM used:   122 words (1%)
+                           Largest free fragment is 2048
+               RAM used:   8 (2%) at main() level
+                           8 (2%) worst case
+               Stack used: 0 locations
+               Stack size: 8
+
+*
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   004
+0003:  NOP
+.................... //https://youtu.be/cK6N2QQdhiM 
+.................... #include <main.h> 
+.................... #include <16F887.h> 
+.................... //////////// Standard Header file for the PIC16F887 device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2013 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC16F887 
+....................  
+.................... #list 
+....................  
+.................... #device ADC=16 
+....................  
+.................... #FUSES NOWDT                 	//No Watch Dog Timer 
+.................... #FUSES NOBROWNOUT            	//No brownout reset 
+.................... #FUSES NOLVP                 	//No low voltage prgming, B3(PIC16) or B5(PIC18) used for I/O 
+....................  
+.................... #use delay(crystal=20000000) 
+....................  
+....................  
+.................... #bit TMR1IF = 0x0c.0 
+.................... //High, low 0.5s 
+.................... void delay_5ms()   //Use timer0 to internal 
+.................... { 
+....................    set_timer0(0); 
+....................    while(get_timer0() < 208) 
+....................    {} 
+.................... } 
+.................... //High 0.1s, low 0.2s 
+.................... void delay_1ms(int *flag)  //Use timer1 
+.................... { 
+....................    if(*flag == 1) 
+....................    { 
+....................       set_timer1(0); 
+....................       output_high(pin_d1); 
+....................       while(get_timer1() < 5000); 
+....................       *flag = 0; 
+....................    } 
+....................    if(*flag == 0) 
+....................    { 
+....................       set_timer1(0); 
+....................       output_low(pin_d1); 
+....................       while(get_timer1() < 10000); 
+....................       *flag = 1; 
+....................    } 
+....................     
+.................... } 
+.................... /*void main() 
+.................... { 
+....................    int *flag = 1; 
+....................    output_drive(pin_d0); 
+....................    output_high(pin_d0); 
+....................    output_drive(pin_d1);    
+....................    setup_timer_0(T0_INTERNAL|T0_DIV_128); 
+....................    setup_timer_1(T1_INTERNAL|T1_DIV_BY_1); 
+....................    while(TRUE) 
+....................    { 
+....................       output_toggle(pin_d0); 
+....................       delay_5ms(); 
+....................       delay_1ms(&flag); 
+....................    } 
+....................  
+.................... }*/ 
+....................  
+.................... //Ham main chay 2 xung cung 1 thoi diem 
+.................... void main () 
+0004:  MOVF   03,W
+0005:  ANDLW  1F
+0006:  MOVWF  03
+0007:  BSF    03.5
+0008:  BSF    03.6
+0009:  MOVF   09,W
+000A:  ANDLW  C0
+000B:  MOVWF  09
+000C:  BCF    03.6
+000D:  BCF    1F.4
+000E:  BCF    1F.5
+000F:  MOVLW  00
+0010:  BSF    03.6
+0011:  MOVWF  08
+0012:  BCF    03.5
+0013:  CLRF   07
+0014:  CLRF   08
+0015:  CLRF   09
+0016:  BCF    03.7
+0017:  MOVLW  01
+0018:  BCF    03.6
+0019:  MOVWF  21
+.................... { 
+....................    int flag = 1; 
+....................    output_drive(pin_d0); 
+001A:  BSF    03.5
+001B:  BCF    08.0
+....................    output_drive(pin_d1); 
+001C:  BCF    08.1
+....................     
+....................    output_high(pin_d0); 
+001D:  BCF    08.0
+001E:  BCF    03.5
+001F:  BSF    08.0
+....................     
+....................    setup_timer_0(T0_INTERNAL|T0_DIV_128); 
+0020:  BSF    03.5
+0021:  MOVF   01,W
+0022:  ANDLW  C0
+0023:  IORLW  06
+0024:  MOVWF  01
+....................    setup_timer_1(T1_INTERNAL|T1_DIV_BY_1); 
+0025:  MOVLW  05
+0026:  BCF    03.5
+0027:  MOVWF  10
+....................     
+....................    set_timer0(0); 
+0028:  CLRF   01
+....................    set_timer1(0); 
+0029:  CLRF   0E
+002A:  CLRF   0F
+002B:  CLRF   0E
+....................     
+....................    while(1) 
+....................    { 
+....................       if(get_timer0() > 207) 
+002C:  MOVF   01,W
+002D:  SUBLW  CF
+002E:  BTFSC  03.0
+002F:  GOTO   036
+....................       {  
+....................          set_timer0(0); 
+0030:  CLRF   01
+....................          output_toggle(pin_d0); 
+0031:  BSF    03.5
+0032:  BCF    08.0
+0033:  MOVLW  01
+0034:  BCF    03.5
+0035:  XORWF  08,F
+....................       } 
+....................       if(get_timer1() > 5000 && flag == 1) 
+0036:  MOVF   0F,W
+0037:  MOVWF  7A
+0038:  MOVF   0E,W
+0039:  MOVWF  77
+003A:  MOVF   0F,W
+003B:  SUBWF  7A,W
+003C:  BTFSS  03.2
+003D:  GOTO   036
+003E:  MOVF   77,W
+003F:  MOVWF  22
+0040:  MOVF   7A,W
+0041:  MOVWF  23
+0042:  MOVF   23,W
+0043:  SUBLW  12
+0044:  BTFSC  03.0
+0045:  GOTO   058
+0046:  XORLW  FF
+0047:  BTFSS  03.2
+0048:  GOTO   04D
+0049:  MOVF   22,W
+004A:  SUBLW  88
+004B:  BTFSC  03.0
+004C:  GOTO   058
+004D:  DECFSZ 21,W
+004E:  GOTO   058
+....................       {   
+....................          set_timer1(0); 
+004F:  CLRF   0E
+0050:  CLRF   0F
+0051:  CLRF   0E
+....................          output_low(pin_d1); 
+0052:  BSF    03.5
+0053:  BCF    08.1
+0054:  BCF    03.5
+0055:  BCF    08.1
+....................          flag = 0; 
+0056:  CLRF   21
+....................       } 
+0057:  GOTO   078
+....................       else if(get_timer1() > 10000) 
+0058:  MOVF   0F,W
+0059:  MOVWF  7A
+005A:  MOVF   0E,W
+005B:  MOVWF  77
+005C:  MOVF   0F,W
+005D:  SUBWF  7A,W
+005E:  BTFSS  03.2
+005F:  GOTO   058
+0060:  MOVF   77,W
+0061:  MOVWF  22
+0062:  MOVF   7A,W
+0063:  MOVWF  23
+0064:  MOVF   23,W
+0065:  SUBLW  26
+0066:  BTFSC  03.0
+0067:  GOTO   078
+0068:  XORLW  FF
+0069:  BTFSS  03.2
+006A:  GOTO   06F
+006B:  MOVF   22,W
+006C:  SUBLW  10
+006D:  BTFSC  03.0
+006E:  GOTO   078
+....................       { 
+....................          set_timer1(0); 
+006F:  CLRF   0E
+0070:  CLRF   0F
+0071:  CLRF   0E
+....................          output_high(pin_d1); 
+0072:  BSF    03.5
+0073:  BCF    08.1
+0074:  BCF    03.5
+0075:  BSF    08.1
+....................          flag = 1; 
+0076:  MOVLW  01
+0077:  MOVWF  21
+....................       } 
+0078:  GOTO   02C
+....................        
+....................    } 
+.................... } 
+0079:  SLEEP
+
+Configuration Fuses:
+   Word  1: 2CE2   HS NOWDT PUT MCLR NOPROTECT NOCPD NOBROWNOUT IESO FCMEN NOLVP NODEBUG
+   Word  2: 3FFF   BORV40 NOWRT

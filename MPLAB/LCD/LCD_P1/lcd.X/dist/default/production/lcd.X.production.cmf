@@ -1,0 +1,593 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta> <reloc>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$C:\Users\tramt\AppData\Local\Temp\xcAshec.o
+idloc IDLOC 5 2000 2000 4 2 1
+end_init CODE 0 0 0 3 2 1
+config CONFIG 4 2007 2007 2 2 1
+$dist/default/production\lcd.X.production.o
+cinit CODE 0 7D8 7D8 28 2 1
+idloc IDLOC 5 2000 2000 4 2 1
+text1 CODE 0 6F1 6F1 E7 2 1
+text2 CODE 0 465 465 3A 2 1
+text3 CODE 0 523 523 44 2 1
+text4 CODE 0 679 679 78 2 1
+text5 CODE 0 5B5 5B5 5F 2 1
+text6 CODE 0 430 430 35 2 1
+text7 CODE 0 4DF 4DF 44 2 1
+text8 CODE 0 567 567 4E 2 1
+maintext CODE 0 614 614 65 2 1
+cstackCOMMON COMMON 1 70 70 E 1 1
+cstackBANK0 BANK0 1 39 39 11 1 1
+inittext CODE 0 3F6 3F6 13 2 1
+bssBANK0 BANK0 1 20 20 19 1 1
+idataBANK1 CODE 0 409 409 27 2 1
+idataBANK3 CODE 0 49F 49F 40 2 1
+strings STRING 0 3 3 5A 2 1
+dataBANK1 BANK1 1 A0 A0 27 1 1
+dataBANK3 BANK3 1 190 190 40 1 1
+clrtext CODE 0 3EE 3EE 8 2 1
+config CONFIG 4 2007 2007 2 2 1
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM 4A-6F 1
+RAM C7-EF 1
+RAM 110-16F 1
+RAM 1D0-1EF 1
+BANK0 4A-6F 1
+BANK1 C7-EF 1
+BANK2 110-16F 1
+BANK3 1D0-1EF 1
+CONST 5D-3ED 2
+CONST 800-1FFF 2
+ENTRY 5D-3ED 2
+ENTRY 800-1FFF 2
+CODE 5D-3ED 2
+CODE 800-1FFF 2
+SFR0 0-1F 1
+SFR1 80-9F 1
+SFR2 100-10F 1
+SFR3 180-18F 1
+EEDATA 2100-21FF 2
+STRCODE 5D-3ED 2
+STRCODE 800-1FFF 2
+STRING 5D-3ED 2
+STRING 800-1FFF 2
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$dist/default/production\lcd.X.production.o
+7D8 cinit CODE >847:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+7D8 cinit CODE >850:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+7D8 cinit CODE >908:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+7D9 cinit CODE >909:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+7DA cinit CODE >910:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+7DB cinit CODE >911:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+7DC cinit CODE >912:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+7DD cinit CODE >913:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+7DE cinit CODE >914:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+7DF cinit CODE >915:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+7E0 cinit CODE >916:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+7E1 cinit CODE >917:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+7E6 cinit CODE >921:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+7E7 cinit CODE >922:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+7E8 cinit CODE >923:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+7E9 cinit CODE >924:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+7EA cinit CODE >925:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+7EB cinit CODE >926:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+7EC cinit CODE >927:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+7ED cinit CODE >928:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+7EE cinit CODE >929:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+7EF cinit CODE >930:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+7F4 cinit CODE >949:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+7F5 cinit CODE >950:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+7F6 cinit CODE >951:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+7F7 cinit CODE >952:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+7FC cinit CODE >958:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+7FC cinit CODE >960:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+7FD cinit CODE >961:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+567 text8 CODE >135:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+567 text8 CODE >139:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+567 text8 CODE >142:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+56D text8 CODE >145:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+570 text8 CODE >146:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+571 text8 CODE >150:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+571 text8 CODE >156:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+574 text8 CODE >159:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+574 text8 CODE >161:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+57A text8 CODE >162:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+57D text8 CODE >162:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+580 text8 CODE >162:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+582 text8 CODE >162:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+587 text8 CODE >164:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+587 text8 CODE >167:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+58A text8 CODE >168:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+58B text8 CODE >170:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+58E text8 CODE >171:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+58E text8 CODE >173:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+594 text8 CODE >174:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+598 text8 CODE >176:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+59D text8 CODE >178:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+5A2 text8 CODE >180:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+5A2 text8 CODE >182:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+5A5 text8 CODE >183:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+5A6 text8 CODE >184:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+5AB text8 CODE >186:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+5AE text8 CODE >189:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+5B4 text8 CODE >191:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+4DF text7 CODE >80:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+4E0 text7 CODE >92:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+4E3 text7 CODE >92:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+4E6 text7 CODE >92:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+4EC text7 CODE >93:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+4F1 text7 CODE >95:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+4F6 text7 CODE >96:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+4FA text7 CODE >97:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+4FA text7 CODE >98:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+4FD text7 CODE >102:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+500 text7 CODE >106:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+506 text7 CODE >107:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+508 text7 CODE >109:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+509 text7 CODE >113:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+50C text7 CODE >115:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+50D text7 CODE >118:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+510 text7 CODE >120:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+516 text7 CODE >122:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+518 text7 CODE >124:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+519 text7 CODE >128:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+51C text7 CODE >130:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+51D text7 CODE >132:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+522 text7 CODE >133:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+430 text6 CODE >352:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+431 text6 CODE >354:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+433 text6 CODE >354:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+438 text6 CODE >362:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+438 text6 CODE >363:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+439 text6 CODE >364:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+43A text6 CODE >366:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+43E text6 CODE >367:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+43F text6 CODE >369:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+443 text6 CODE >370:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+444 text6 CODE >371:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+44B text6 CODE >371:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+450 text6 CODE >371:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+453 text6 CODE >371:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+456 text6 CODE >371:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+459 text6 CODE >371:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+45C text6 CODE >393:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+45D text6 CODE >394:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+464 text6 CODE >395:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+5B5 text5 CODE >193:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+5B8 text5 CODE >209:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+5C0 text5 CODE >212:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+5C6 text5 CODE >214:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+5C7 text5 CODE >215:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+5C8 text5 CODE >216:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+5C9 text5 CODE >218:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+5CF text5 CODE >220:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+5D0 text5 CODE >221:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+5D1 text5 CODE >222:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+5D2 text5 CODE >225:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+5D2 text5 CODE >227:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+5D5 text5 CODE >228:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+5D6 text5 CODE >229:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+5D7 text5 CODE >230:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+5DA text5 CODE >231:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+5DB text5 CODE >234:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+5E0 text5 CODE >239:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+5E7 text5 CODE >240:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+5F1 text5 CODE >243:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+5F8 text5 CODE >246:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+5FB text5 CODE >247:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+60F text5 CODE >247:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+613 text5 CODE >250:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+679 text4 CODE >251:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+679 text4 CODE >281:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+67A text4 CODE >284:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+684 text4 CODE >284:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+688 text4 CODE >286:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+68A text4 CODE >286:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+68E text4 CODE >287:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+69B text4 CODE >289:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+6A2 text4 CODE >289:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+6A6 text4 CODE >291:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+6AE text4 CODE >292:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+6AF text4 CODE >295:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+6B7 text4 CODE >296:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+6CA text4 CODE >301:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+6DA text4 CODE >303:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+6DC text4 CODE >303:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+6E0 text4 CODE >281:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+6EC text4 CODE >281:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+6F0 text4 CODE >305:C:\PIC16F887\MPLAB\LCD\lcd.X\lcd_hd44780_pic16.c
+523 text3 CODE >5:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+523 text3 CODE >13:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+525 text3 CODE >14:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+52B text3 CODE >15:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+52D text3 CODE >16:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+52E text3 CODE >17:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+52F text3 CODE >17:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+533 text3 CODE >17:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+535 text3 CODE >18:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+539 text3 CODE >16:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+53D text3 CODE >21:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+53E text3 CODE >21:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+542 text3 CODE >21:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+544 text3 CODE >22:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+546 text3 CODE >22:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+54A text3 CODE >22:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+54E text3 CODE >23:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+551 text3 CODE >23:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+554 text3 CODE >24:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+555 text3 CODE >26:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+556 text3 CODE >26:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+55A text3 CODE >26:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+55C text3 CODE >27:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+562 text3 CODE >29:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+566 text3 CODE >30:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
+465 text2 CODE >5:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwmod.c
+465 text2 CODE >12:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwmod.c
+46B text2 CODE >13:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwmod.c
+46D text2 CODE >14:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwmod.c
+46E text2 CODE >15:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwmod.c
+46F text2 CODE >15:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwmod.c
+473 text2 CODE >15:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwmod.c
+475 text2 CODE >16:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwmod.c
+479 text2 CODE >14:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwmod.c
+47D text2 CODE >19:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwmod.c
+47F text2 CODE >19:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwmod.c
+483 text2 CODE >19:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwmod.c
+487 text2 CODE >20:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwmod.c
+48A text2 CODE >20:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwmod.c
+48D text2 CODE >21:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwmod.c
+48E text2 CODE >21:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwmod.c
+492 text2 CODE >21:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwmod.c
+494 text2 CODE >22:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwmod.c
+49A text2 CODE >24:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwmod.c
+49E text2 CODE >25:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwmod.c
+6F1 text1 CODE >505:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+6F4 text1 CODE >550:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+6F8 text1 CODE >553:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+6F9 text1 CODE >555:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+6FF text1 CODE >558:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+70A text1 CODE >559:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+70B text1 CODE >565:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+70C text1 CODE >661:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+70D text1 CODE >825:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+718 text1 CODE >835:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+723 text1 CODE >836:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+724 text1 CODE >844:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+728 text1 CODE >845:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+729 text1 CODE >848:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+738 text1 CODE >848:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+73D text1 CODE >848:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+740 text1 CODE >848:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+743 text1 CODE >848:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+746 text1 CODE >1312:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+752 text1 CODE >1331:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+754 text1 CODE >1332:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+767 text1 CODE >1332:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+76B text1 CODE >1332:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+770 text1 CODE >1333:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+77A text1 CODE >1498:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+77E text1 CODE >1500:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+77F text1 CODE >1515:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+7AD text1 CODE >1550:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+7B8 text1 CODE >1500:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+7C1 text1 CODE >553:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+7D3 text1 CODE >1564:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+7D7 text1 CODE >1567:C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
+614 maintext CODE >32:C:\PIC16F887\MPLAB\LCD\lcd.X\main.c
+614 maintext CODE >37:C:\PIC16F887\MPLAB\LCD\lcd.X\main.c
+61A maintext CODE >40:C:\PIC16F887\MPLAB\LCD\lcd.X\main.c
+61D maintext CODE >42:C:\PIC16F887\MPLAB\LCD\lcd.X\main.c
+624 maintext CODE >43:C:\PIC16F887\MPLAB\LCD\lcd.X\main.c
+62D maintext CODE >44:C:\PIC16F887\MPLAB\LCD\lcd.X\main.c
+637 maintext CODE >45:C:\PIC16F887\MPLAB\LCD\lcd.X\main.c
+64A maintext CODE >46:C:\PIC16F887\MPLAB\LCD\lcd.X\main.c
+653 maintext CODE >47:C:\PIC16F887\MPLAB\LCD\lcd.X\main.c
+662 maintext CODE >48:C:\PIC16F887\MPLAB\LCD\lcd.X\main.c
+669 maintext CODE >49:C:\PIC16F887\MPLAB\LCD\lcd.X\main.c
+671 maintext CODE >49:C:\PIC16F887\MPLAB\LCD\lcd.X\main.c
+3EE clrtext CODE >936:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+3EE clrtext CODE >937:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+3EF clrtext CODE >938:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+3EF clrtext CODE >939:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+3F0 clrtext CODE >940:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+3F1 clrtext CODE >941:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+3F2 clrtext CODE >942:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+3F3 clrtext CODE >943:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+3F4 clrtext CODE >944:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+3F5 clrtext CODE >945:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+3F6 inittext CODE >882:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+3F6 inittext CODE >883:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+3F7 inittext CODE >884:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+3F8 inittext CODE >885:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+3F9 inittext CODE >886:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+3FA inittext CODE >893:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+3FA inittext CODE >894:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+3FF inittext CODE >895:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+400 inittext CODE >896:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+401 inittext CODE >897:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+402 inittext CODE >898:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+403 inittext CODE >899:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+404 inittext CODE >900:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+405 inittext CODE >901:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+406 inittext CODE >902:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+407 inittext CODE >903:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+408 inittext CODE >904:C:\Users\tramt\AppData\Local\Temp\xcAshec.s
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+_p 25 0 BANK0 1 bssBANK0 dist/default/production\lcd.X.production.o
+___latbits 2 0 ABS 0 - dist/default/production\lcd.X.production.o
+___lwmod@counter 7D 0 COMMON 1 cstackCOMMON dist/default/production\lcd.X.production.o
+__LdataBANK1 0 0 ABS 0 dataBANK1 -
+__LdataBANK3 0 0 ABS 0 dataBANK3 -
+__Hspace_0 800 0 ABS 0 - -
+__Hspace_1 1D0 0 ABS 0 - -
+__Hspace_2 0 0 ABS 0 - -
+__Hspace_3 0 0 ABS 0 - -
+__Hspace_4 4010 0 ABS 0 - -
+__HidataBANK1 0 0 ABS 0 idataBANK1 -
+__HidataBANK3 0 0 ABS 0 idataBANK3 -
+__Heeprom_data 0 0 EEDATA 3 eeprom_data -
+main@i 49 0 BANK0 1 cstackBANK0 dist/default/production\lcd.X.production.o
+__Hstrings 0 0 ABS 0 strings -
+___sp 0 0 STACK 2 stack C:\Users\tramt\AppData\Local\Temp\xcAshec.o
+_main C28 0 CODE 0 maintext dist/default/production\lcd.X.production.o
+btemp 7E 0 ABS 0 - dist/default/production\lcd.X.production.o
+start 0 0 CODE 0 init C:\Users\tramt\AppData\Local\Temp\xcAshec.o
+__LidataBANK1 0 0 ABS 0 idataBANK1 -
+__LidataBANK3 0 0 ABS 0 idataBANK3 -
+__Hpowerup 0 0 CODE 0 powerup -
+intlevel0 0 0 ENTRY 0 functab C:\Users\tramt\AppData\Local\Temp\xcAshec.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\tramt\AppData\Local\Temp\xcAshec.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\tramt\AppData\Local\Temp\xcAshec.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\tramt\AppData\Local\Temp\xcAshec.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\tramt\AppData\Local\Temp\xcAshec.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\tramt\AppData\Local\Temp\xcAshec.o
+wtemp0 7E 0 ABS 0 - dist/default/production\lcd.X.production.o
+__Hfunctab 0 0 ENTRY 0 functab -
+__Hclrtext 0 0 ABS 0 clrtext -
+__end_of_LCDGotoXY 8CA 0 CODE 0 text6 dist/default/production\lcd.X.production.o
+LCDBusyLoop@status 74 0 COMMON 1 cstackCOMMON dist/default/production\lcd.X.production.o
+__Lmaintext 0 0 ABS 0 maintext -
+_LCDGotoXY 860 0 CODE 0 text6 dist/default/production\lcd.X.production.o
+___lwmod@divisor 78 0 COMMON 1 cstackCOMMON dist/default/production\lcd.X.production.o
+__end_of___lwdiv ACE 0 CODE 0 text3 dist/default/production\lcd.X.production.o
+__end_of___lwmod 93E 0 CODE 0 text2 dist/default/production\lcd.X.production.o
+___stackhi 0 0 ABS 0 - C:\Users\tramt\AppData\Local\Temp\xcAshec.o
+___stacklo 0 0 ABS 0 - C:\Users\tramt\AppData\Local\Temp\xcAshec.o
+_LCDBusyLoop ACE 0 CODE 0 text8 dist/default/production\lcd.X.production.o
+__end_of_LCDByte A46 0 CODE 0 text7 dist/default/production\lcd.X.production.o
+__end_of_LCDInit C28 0 CODE 0 text5 dist/default/production\lcd.X.production.o
+_dpowers 26 0 STRING 0 strings dist/default/production\lcd.X.production.o
+___lwdiv@quotient 75 0 COMMON 1 cstackCOMMON dist/default/production\lcd.X.production.o
+LCDWriteString@cc 3A 0 BANK0 1 cstackBANK0 dist/default/production\lcd.X.production.o
+___lwmod@dividend 7A 0 COMMON 1 cstackCOMMON dist/default/production\lcd.X.production.o
+start_initialization FB0 0 CODE 0 cinit dist/default/production\lcd.X.production.o
+_TRISDbits 88 0 ABS 0 - dist/default/production\lcd.X.production.o
+clear_ram0 7DC 0 CODE 0 clrtext dist/default/production\lcd.X.production.o
+__pcstackBANK0 39 0 BANK0 1 cstackBANK0 dist/default/production\lcd.X.production.o
+LCDByte@temp 7B 0 COMMON 1 cstackCOMMON dist/default/production\lcd.X.production.o
+___int_sp 0 0 STACK 2 stack C:\Users\tramt\AppData\Local\Temp\xcAshec.o
+__Hbank0 0 0 ABS 0 bank0 -
+__Hbank1 0 0 ABS 0 bank1 -
+__Hbank2 0 0 ABS 0 bank2 -
+__Hbank3 0 0 ABS 0 bank3 -
+__Hcinit 1000 0 CODE 0 cinit -
+__Hidloc 4008 0 IDLOC 5 idloc -
+__Hstack 0 0 STACK 2 stack -
+__stringbase 24 0 STRING 0 strings dist/default/production\lcd.X.production.o
+___lwdiv@counter 77 0 COMMON 1 cstackCOMMON dist/default/production\lcd.X.production.o
+__Hmaintext 0 0 ABS 0 maintext -
+__end_of_sprintf FB0 0 CODE 0 text1 dist/default/production\lcd.X.production.o
+__Hcommon 0 0 ABS 0 common -
+__Hconfig 4012 0 CONFIG 4 config -
+__Lbank0 0 0 ABS 0 bank0 -
+__Lbank1 0 0 ABS 0 bank1 -
+__Lbank2 0 0 ABS 0 bank2 -
+__Lbank3 0 0 ABS 0 bank3 -
+__Lcinit FB0 0 CODE 0 cinit -
+LCDByte@c 7A 0 COMMON 1 cstackCOMMON dist/default/production\lcd.X.production.o
+__Lidloc 0 0 IDLOC 5 idloc -
+__Lstack 0 0 STACK 2 stack -
+__Linittext 0 0 ABS 0 inittext -
+__Habs1 0 0 ABS 0 abs1 -
+__Hcode 0 0 ABS 0 code -
+__Hinit 0 0 CODE 0 init -
+__Hsfr0 0 0 ABS 0 sfr0 -
+__Hsfr1 0 0 ABS 0 sfr1 -
+__Hsfr2 0 0 ABS 0 sfr2 -
+__Hsfr3 0 0 ABS 0 sfr3 -
+__Htext 0 0 ABS 0 text -
+__Labs1 0 0 ABS 0 abs1 -
+__Lcode 0 0 ABS 0 code -
+__Linit 0 0 CODE 0 init -
+__Lsfr0 0 0 ABS 0 sfr0 -
+__Lsfr1 0 0 ABS 0 sfr1 -
+__Lsfr2 0 0 ABS 0 sfr2 -
+__Lsfr3 0 0 ABS 0 sfr3 -
+__Ltext 0 0 ABS 0 text -
+__LcstackBANK0 0 0 ABS 0 cstackBANK0 -
+__HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+_RD4 44 0 ABS 0 - dist/default/production\lcd.X.production.o
+_RD5 45 0 ABS 0 - dist/default/production\lcd.X.production.o
+_RD6 46 0 ABS 0 - dist/default/production\lcd.X.production.o
+__S0 800 0 ABS 0 - -
+__S1 1D0 0 ABS 0 - -
+__S3 0 0 ABS 0 - -
+_chu A0 0 BANK1 1 dataBANK1 dist/default/production\lcd.X.production.o
+LCDGotoXY@x 7D 0 COMMON 1 cstackCOMMON dist/default/production\lcd.X.production.o
+LCDGotoXY@y 7C 0 COMMON 1 cstackCOMMON dist/default/production\lcd.X.production.o
+sprintf@val 40 0 BANK0 1 cstackBANK0 dist/default/production\lcd.X.production.o
+__Lintentry 0 0 CODE 0 intentry -
+__stringtab 6 0 STRING 0 strings dist/default/production\lcd.X.production.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\tramt\AppData\Local\Temp\xcAshec.o
+__pdataBANK1 A0 0 BANK1 1 dataBANK1 dist/default/production\lcd.X.production.o
+__pdataBANK3 190 0 BANK3 1 dataBANK3 dist/default/production\lcd.X.production.o
+__LbssBANK0 0 0 ABS 0 bssBANK0 -
+sprintf@flag 3F 0 BANK0 1 cstackBANK0 dist/default/production\lcd.X.production.o
+sprintf@prec 42 0 BANK0 1 cstackBANK0 dist/default/production\lcd.X.production.o
+___cgram 190 0 BANK3 1 dataBANK3 dist/default/production\lcd.X.production.o
+___lwdiv A46 0 CODE 0 text3 dist/default/production\lcd.X.production.o
+___lwmod 8CA 0 CODE 0 text2 dist/default/production\lcd.X.production.o
+__pmaintext C28 0 CODE 0 maintext dist/default/production\lcd.X.production.o
+__Lcommon 0 0 ABS 0 common -
+__Lconfig 0 0 CONFIG 4 config -
+LCDByte@hn 78 0 COMMON 1 cstackCOMMON dist/default/production\lcd.X.production.o
+LCDByte@ln 79 0 COMMON 1 cstackCOMMON dist/default/production\lcd.X.production.o
+__Hinittext 0 0 ABS 0 inittext -
+_LCDByte 9BE 0 CODE 0 text7 dist/default/production\lcd.X.production.o
+_LCDInit B6A 0 CODE 0 text5 dist/default/production\lcd.X.production.o
+___lwdiv@divisor 70 0 COMMON 1 cstackCOMMON dist/default/production\lcd.X.production.o
+_LCDWriteString CF2 0 CODE 0 text4 dist/default/production\lcd.X.production.o
+__end_of_LCDBusyLoop B6A 0 CODE 0 text8 dist/default/production\lcd.X.production.o
+__end_of__stringtab 26 0 STRING 0 strings dist/default/production\lcd.X.production.o
+__Lspace_0 0 0 ABS 0 - -
+__Lspace_1 0 0 ABS 0 - -
+__Lspace_2 0 0 ABS 0 - -
+__Lspace_3 0 0 ABS 0 - -
+__Lspace_4 0 0 ABS 0 - -
+init_fetch0 7EC 0 CODE 0 inittext dist/default/production\lcd.X.production.o
+__HcstackBANK0 0 0 ABS 0 cstackBANK0 -
+__Lend_init 0 0 CODE 0 end_init -
+__LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+end_of_initialization FF8 0 CODE 0 cinit dist/default/production\lcd.X.production.o
+__Hintentry 0 0 CODE 0 intentry -
+__Lstrings 0 0 ABS 0 strings -
+___lwdiv@dividend 72 0 COMMON 1 cstackCOMMON dist/default/production\lcd.X.production.o
+?___lwdiv 70 0 COMMON 1 cstackCOMMON dist/default/production\lcd.X.production.o
+?___lwmod 78 0 COMMON 1 cstackCOMMON dist/default/production\lcd.X.production.o
+__Hreset_vec 0 0 CODE 0 reset_vec -
+__HbssBANK0 0 0 ABS 0 bssBANK0 -
+__ptext1 DE2 0 CODE 0 text1 dist/default/production\lcd.X.production.o
+__ptext2 8CA 0 CODE 0 text2 dist/default/production\lcd.X.production.o
+__ptext3 A46 0 CODE 0 text3 dist/default/production\lcd.X.production.o
+__ptext4 CF2 0 CODE 0 text4 dist/default/production\lcd.X.production.o
+__ptext5 B6A 0 CODE 0 text5 dist/default/production\lcd.X.production.o
+__ptext6 860 0 CODE 0 text6 dist/default/production\lcd.X.production.o
+__ptext7 9BE 0 CODE 0 text7 dist/default/production\lcd.X.production.o
+__ptext8 ACE 0 CODE 0 text8 dist/default/production\lcd.X.production.o
+__end_of_LCDWriteString DE2 0 CODE 0 text4 dist/default/production\lcd.X.production.o
+_sprintf DE2 0 CODE 0 text1 dist/default/production\lcd.X.production.o
+__Lpowerup 0 0 CODE 0 powerup -
+__Leeprom_data 0 0 EEDATA 3 eeprom_data -
+sprintf@ap 43 0 BANK0 1 cstackBANK0 dist/default/production\lcd.X.production.o
+sprintf@sp 44 0 BANK0 1 cstackBANK0 dist/default/production\lcd.X.production.o
+__Lreset_vec 0 0 CODE 0 reset_vec -
+LCDInit@style 39 0 BANK0 1 cstackBANK0 dist/default/production\lcd.X.production.o
+__end_of__initialization FF8 0 CODE 0 cinit dist/default/production\lcd.X.production.o
+__Lfunctab 0 0 ENTRY 0 functab -
+__pidataBANK1 812 0 CODE 0 idataBANK1 dist/default/production\lcd.X.production.o
+__pidataBANK3 93E 0 CODE 0 idataBANK3 dist/default/production\lcd.X.production.o
+LCDWriteString@msg 7C 0 COMMON 1 cstackCOMMON dist/default/production\lcd.X.production.o
+__Lclrtext 0 0 ABS 0 clrtext -
+__pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\lcd.X.production.o
+__Hend_init 6 0 CODE 0 end_init -
+init_ram0 7F4 0 CODE 0 inittext dist/default/production\lcd.X.production.o
+sprintf@c 45 0 BANK0 1 cstackBANK0 dist/default/production\lcd.X.production.o
+sprintf@f 39 0 BANK0 1 cstackBANK0 dist/default/production\lcd.X.production.o
+__end_of_main CF2 0 CODE 0 maintext dist/default/production\lcd.X.production.o
+__end_of_dpowers 3A 0 STRING 0 strings dist/default/production\lcd.X.production.o
+?_sprintf 39 0 BANK0 1 cstackBANK0 dist/default/production\lcd.X.production.o
+_PORTD 8 0 ABS 0 - dist/default/production\lcd.X.production.o
+_TRISD 88 0 ABS 0 - dist/default/production\lcd.X.production.o
+__Hram 0 0 ABS 0 ram -
+__Lram 0 0 ABS 0 ram -
+LCDBusyLoop@busy 72 0 COMMON 1 cstackCOMMON dist/default/production\lcd.X.production.o
+LCDBusyLoop@temp 73 0 COMMON 1 cstackCOMMON dist/default/production\lcd.X.production.o
+LCDByte@isdata 75 0 COMMON 1 cstackCOMMON dist/default/production\lcd.X.production.o
+__HdataBANK1 0 0 ABS 0 dataBANK1 -
+__HdataBANK3 0 0 ABS 0 dataBANK3 -
+LCDInit@__i 3A 0 BANK0 1 cstackBANK0 dist/default/production\lcd.X.production.o
+__initialization FB0 0 CODE 0 cinit dist/default/production\lcd.X.production.o
+__pbssBANK0 20 0 BANK0 1 bssBANK0 dist/default/production\lcd.X.production.o
+__pstrings 6 0 STRING 0 strings dist/default/production\lcd.X.production.o
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+- 1 7E 2
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+cinit 0 7D8 FB0 28 2
+text1 0 6F1 DE2 E7 2
+text2 0 465 8CA 3A 2
+text3 0 523 A46 44 2
+text4 0 679 CF2 78 2
+text5 0 5B5 B6A 5F 2
+text6 0 430 860 35 2
+text7 0 4DF 9BE 44 2
+text8 0 567 ACE 4E 2
+maintext 0 614 C28 65 2
+cstackCOMMON 1 70 70 E 1
+inittext 0 3F6 7EC 13 2
+reset_vec 0 0 0 3 2
+bssBANK0 1 20 20 2A 1
+idataBANK1 0 409 812 27 2
+idataBANK3 0 49F 93E 40 2
+strings 0 3 6 5A 2
+dataBANK1 1 A0 A0 27 1
+dataBANK3 1 190 190 40 1
+clrtext 0 3EE 7DC 8 2
+# %NOTES Section
+# This section contains data of all the note-psects.  The beginning of the section
+# is indicated by %NOTES. The first line indicates the name and decimal
+# byte-length of the first note-psect, e.g.
+#   $codecov_info_hdr 16
+# Each line that follows contains the byte-data of the psect in hexadecimal as a
+# space-separated list. These lines are limited to 16 bytes of data.
+%NOTES

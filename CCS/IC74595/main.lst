@@ -1,0 +1,230 @@
+CCS PCM C Compiler, Version 5.015, 5967               11-Thg3-22 23:02
+
+               Filename:   C:\PIC16F887\CCS\IC74595\main.lst
+
+               ROM used:   145 words (2%)
+                           Largest free fragment is 2048
+               RAM used:   11 (3%) at main() level
+                           15 (4%) worst case
+               Stack used: 2 locations
+               Stack size: 8
+
+*
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   044
+0003:  NOP
+.................... #include <main.h> 
+.................... #include <16F887.h> 
+.................... //////////// Standard Header file for the PIC16F887 device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2013 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC16F887 
+....................  
+.................... #list 
+....................  
+.................... #device ADC=16 
+....................  
+.................... #FUSES NOWDT                    //No Watch Dog Timer 
+.................... #FUSES NOBROWNOUT               //No brownout reset 
+.................... #FUSES NOLVP                    //No low voltage prgming, B3(PIC16) or B5(PIC18) used for I/O 
+....................  
+.................... #use delay(crystal=4000000) 
+*
+002F:  MOVLW  25
+0030:  MOVWF  04
+0031:  BCF    03.7
+0032:  MOVF   00,W
+0033:  BTFSC  03.2
+0034:  GOTO   043
+0035:  MOVLW  01
+0036:  MOVWF  78
+0037:  CLRF   77
+0038:  DECFSZ 77,F
+0039:  GOTO   038
+003A:  DECFSZ 78,F
+003B:  GOTO   037
+003C:  MOVLW  4A
+003D:  MOVWF  77
+003E:  DECFSZ 77,F
+003F:  GOTO   03E
+0040:  GOTO   041
+0041:  DECFSZ 00,F
+0042:  GOTO   035
+0043:  RETURN
+....................  
+....................  
+.................... #define ser pin_d0 
+.................... #define sck pin_d1 
+.................... #define rck pin_d2 
+.................... unsigned int16 y; 
+.................... unsigned int16 k; 
+.................... void xuat_1byte(unsigned char xuatbyte)  //xuatbyte = abcdefgh 
+.................... { 
+....................    unsigned char i; 
+....................    #bit bser = xuatbyte.7  //Truy xuat toi vi tri bit thu 7  => bser = a 
+....................    for(i = 0; i < 8; i++) 
+*
+0004:  CLRF   29
+0005:  MOVF   29,W
+0006:  SUBLW  07
+0007:  BTFSS  03.0
+0008:  GOTO   01B
+....................    { 
+....................       output_bit(ser, bser);   //Xuat bit cao ra truoc la bit thu 7 
+0009:  BTFSC  28.7
+000A:  GOTO   00D
+000B:  BCF    08.0
+000C:  GOTO   00E
+000D:  BSF    08.0
+000E:  BSF    03.5
+000F:  BCF    08.0
+....................       output_low(sck); output_high(sck);  //Kich xung sck (canh len) dua bit vao thanh ghi 
+0010:  BCF    08.1
+0011:  BCF    03.5
+0012:  BCF    08.1
+0013:  BSF    03.5
+0014:  BCF    08.1
+0015:  BCF    03.5
+0016:  BSF    08.1
+....................       xuatbyte = xuatbyte << 1; 
+0017:  BCF    03.0
+0018:  RLF    28,F
+0019:  INCF   29,F
+001A:  GOTO   005
+....................    } 
+001B:  RETURN
+.................... } 
+.................... void xuat_16bit(unsigned int16 led) //VD led = abcdefgh qwertyui 
+001C:  MOVF   24,W
+001D:  MOVWF  26
+001E:  MOVF   25,W
+001F:  MOVWF  27
+.................... { 
+....................    int8 donvi = led; // donvi = qwertyui 
+....................    int8 chuc = led >> 8;  //chuc = abcdefgh 
+....................    xuat_1byte(chuc); //phai 8bit = 1byte moi dua vao ham dc 
+0020:  MOVF   27,W
+0021:  MOVWF  28
+0022:  CALL   004
+....................    xuat_1byte(donvi); 
+0023:  MOVF   26,W
+0024:  MOVWF  28
+0025:  CALL   004
+....................    output_low(rck); output_high(rck);  //Kich xung sck (canh len) dua bit ra khoi thanh ghi 
+0026:  BSF    03.5
+0027:  BCF    08.2
+0028:  BCF    03.5
+0029:  BCF    08.2
+002A:  BSF    03.5
+002B:  BCF    08.2
+002C:  BCF    03.5
+002D:  BSF    08.2
+002E:  RETURN
+.................... } 
+.................... void main() 
+*
+0044:  MOVF   03,W
+0045:  ANDLW  1F
+0046:  MOVWF  03
+0047:  BSF    03.5
+0048:  BSF    03.6
+0049:  MOVF   09,W
+004A:  ANDLW  C0
+004B:  MOVWF  09
+004C:  BCF    03.6
+004D:  BCF    1F.4
+004E:  BCF    1F.5
+004F:  MOVLW  00
+0050:  BSF    03.6
+0051:  MOVWF  08
+0052:  BCF    03.5
+0053:  CLRF   07
+0054:  CLRF   08
+0055:  CLRF   09
+0056:  BCF    03.7
+.................... { 
+....................    set_tris_d(0); 
+0057:  MOVLW  00
+0058:  BSF    03.5
+0059:  BCF    03.6
+005A:  MOVWF  08
+....................    while(TRUE) 
+....................    { 
+....................       y = 0; 
+005B:  BCF    03.5
+005C:  CLRF   21
+005D:  CLRF   20
+....................       xuat_16bit(y); 
+005E:  MOVF   21,W
+005F:  MOVWF  25
+0060:  MOVF   20,W
+0061:  MOVWF  24
+0062:  CALL   01C
+....................       delay_ms(500); 
+0063:  MOVLW  02
+0064:  MOVWF  24
+0065:  MOVLW  FA
+0066:  MOVWF  25
+0067:  CALL   02F
+0068:  DECFSZ 24,F
+0069:  GOTO   065
+....................       for(k = 0; k < 16; k++) 
+006A:  CLRF   23
+006B:  CLRF   22
+006C:  MOVF   23,F
+006D:  BTFSS  03.2
+006E:  GOTO   08F
+006F:  MOVF   22,W
+0070:  SUBLW  0F
+0071:  BTFSS  03.0
+0072:  GOTO   08F
+....................       { 
+....................          y = (y << 1) + 1; 
+0073:  BCF    03.0
+0074:  RLF    20,W
+0075:  MOVWF  24
+0076:  RLF    21,W
+0077:  MOVWF  25
+0078:  MOVLW  01
+0079:  ADDWF  24,W
+007A:  MOVWF  20
+007B:  MOVF   25,W
+007C:  MOVWF  21
+007D:  BTFSC  03.0
+007E:  INCF   21,F
+....................          xuat_16bit(y); 
+007F:  MOVF   21,W
+0080:  MOVWF  25
+0081:  MOVF   20,W
+0082:  MOVWF  24
+0083:  CALL   01C
+....................          delay_ms(500); 
+0084:  MOVLW  02
+0085:  MOVWF  24
+0086:  MOVLW  FA
+0087:  MOVWF  25
+0088:  CALL   02F
+0089:  DECFSZ 24,F
+008A:  GOTO   086
+008B:  INCF   22,F
+008C:  BTFSC  03.2
+008D:  INCF   23,F
+008E:  GOTO   06C
+....................       } 
+008F:  GOTO   05C
+....................    } 
+....................  
+.................... } 
+0090:  SLEEP
+
+Configuration Fuses:
+   Word  1: 2CE1   XT NOWDT PUT MCLR NOPROTECT NOCPD NOBROWNOUT IESO FCMEN NOLVP NODEBUG
+   Word  2: 3FFF   BORV40 NOWRT

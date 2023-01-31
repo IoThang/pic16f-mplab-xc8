@@ -1,0 +1,50 @@
+#include <main.h>
+int32 i,j,k,f;
+const UNSIGNED char so[10] = {0x40, 0x79, 0x24, 0x30, 0x19, 0x12, 0x02, 0x78, 0x00, 0x10};
+void main()
+{
+   set_tris_a(0);
+   set_tris_b(0);
+   set_tris_c(0);
+   set_tris_d(0);
+   while(TRUE)
+   {
+     for(i = 1; i < 6; i++)
+     {
+         output_a(so[i]);
+         for(j = 9; j < 10; j++)
+         {
+            output_b(so[j]);
+            for(k = 0; k < 6; k++)
+            {
+               output_c(so[k]);
+               for(f = 0; f < 10; f++)
+               {
+                  output_d(so[f]);
+                  delay_ms(500);
+               }
+            }
+         }
+     }
+     //Doan code o duoi de hien thi so 60:00. Day la doan code ngu ngoc nhat trong cuoc doi viet code cua em.
+     //Chu bay gio em cung ko nghi ra dc cach de hien thi so 60:00 sao cho ngan gon nhat :))
+     for(i = 0; i < 1; i++)
+     {
+         output_a(0x02);
+         for(j = 0; j < 1; j++)
+         {
+             output_b(0x40);
+             for(k = 0; k < 1; k++)
+             {
+                  output_c(0x40);
+                  for(f = 0; f < 1; f++)
+                  {
+                  output_d(0x40);
+                  delay_ms(50);
+                  }
+             }
+         }
+     }
+   }
+
+}

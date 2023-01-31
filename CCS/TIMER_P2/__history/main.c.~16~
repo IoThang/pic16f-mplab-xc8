@@ -1,0 +1,70 @@
+#include <main.h>
+#bit TMR1IF = 0x0c.0
+#bit TMR0IF = 0x0b.2
+int bdt = 0;
+unsigned char b = 0;
+void delay_200ms()  //T1 led sang tat dung ngat- dinh thoi voi chu ki delay 400ms (co nghia la sang 200ms, tat 200ms)
+{
+   set_timer1(3036);
+   while(1)
+   {
+      if(TMR1IF == 1)
+      {
+         set_timer1(3036); bdt++; TMR1IF = 0;
+         if(bdt == 2)
+         {
+            b =~ b;
+            output_b(b);
+            bdt = 0;
+         }
+      }
+   }
+}
+void delay_1s()  //T1 Den sang trong 1s va tat trong 1s
+{
+   set_timer1(3036);
+   while(1)
+   {
+      if(TMR1IF == 1)
+      {
+         set_timer1(3036); bdt++; TMR1IF = 0;
+         if(bdt == 10)
+         {
+            b =~ b;
+            output_b(b);
+            bdt = 0;
+         }
+      }
+   }
+}
+void delay_13ms()  //T0 Den  trong 1 chu ki 26 ms,sang trong 13ms va tat trong 13ms
+{
+   setup_timer_0(T0_INTERNAL|T0_DIV_256);
+   set_timer0(0);
+   while(1)
+   {
+      if(TMR0IF == 1)
+      {
+         set_timer0(0); bdt++; TMR0IF = 0;
+         if(bdt == 10)
+         {
+            b =~ b;
+            output_b(b);
+            bdt = 0;
+         }
+      }
+   }
+}
+void main()
+{
+   set_tris_b(0);
+   setup_timer_1(T1_INTERNAL|T1_DIV_BY_8);
+   output_b(b);
+   while(TRUE)
+   {
+      //delay_200ms();
+      //delay_1s();
+      delay_13ms();
+   }
+
+}

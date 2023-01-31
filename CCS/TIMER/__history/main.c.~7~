@@ -1,0 +1,24 @@
+#include <main.h>
+void delay_5ms()
+{
+   set_timer0(0);
+   while(get_timer0() < 208)
+   {}
+}
+void delay_1ms()
+{
+   set_timer1(0);
+   while(get_timer1() < 625);
+}
+void main()
+{
+   output_drive(pin_c0);   
+   //setup_timer_0(T0_INTERNAL|T0_DIV_128);
+   setup_timer_1(T1_INTERNAL|T1_DIV_BY_8);
+   while(TRUE)
+   {
+      output_toggle(pin_c0);
+      delay_1ms();
+   }
+
+}

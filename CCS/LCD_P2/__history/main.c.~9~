@@ -1,0 +1,50 @@
+#include <main.h>
+#include <lcd.c>
+const unsigned char chu[] = {"                VI XU LY                "};
+//  x=         0123456789012345678901234567890123456789    a[x]
+/*void lcdRunning ()
+{
+   CHAR i, j;
+   FOR(i = 23; i >= 0; i--) 
+   {
+      for(j = 1; j <= 16; j++)
+      {
+         lcd_gotoxy(j, 1);
+         printf(lcd_putc,"%c", chu[i + j]);
+      }
+      delay_ms(100);
+   }
+   lcd_putc('\f');
+}*/
+void _DichPhai(void)
+{
+    char i,j;
+   
+   while(1)
+   {
+      CHAR i, j;
+      FOR(i = 23; i >= 0; i--) 
+      {
+         for(j = 0; j < 16; j++)  //ko dc j = 1. Khi xet TH i = 0; j = 1; => chu[1], se khong chay dc TH chu[0]
+         {
+            lcd_gotoxy(j + 1, 1);
+            printf(lcd_putc,"%c", chu[i + j]);
+         }
+         delay_ms(100);
+      }
+   }
+}
+void main()
+{
+   lcd_init () ;
+   lcd_putc ('\f'); //clear screen
+
+   WHILE (TRUE)
+   {
+      //lcdRunning();
+      _DichPhai();
+   }
+
+   
+}
+

@@ -1,0 +1,12 @@
+#include <main.h>
+#include <16F887.h>
+
+void main()
+
+set_tris_c(0);
+   while(TRUE)
+   {
+      
+   }
+
+}

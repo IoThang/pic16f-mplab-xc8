@@ -1,0 +1,71 @@
+// https://youtu.be/7sO1NF9gkic (de bai)
+#include <main.h>
+#include <lcd.c>
+#define button1 pin_rb0
+#define button2 pin_rb1
+unsigned char aa = 5;
+unsigned char bb;
+void blink()
+{
+   for(unsigned char i = 0; ; i++)
+   {
+      set_timer0(0);
+      lcd_gotoxy(1,1);
+      printf(lcd_putc," DA DU SO LUONG");
+      lcd_gotoxy(1,2);
+      printf(lcd_putc,"DE NGHI DONG GOI");
+      delay_ms(50);
+      lcd_putc('\f');
+      delay_ms(50);
+      if(get_timer0() == 1)
+         break;
+   }
+}
+void count()
+{
+   if(input(pin_b0) == 0)
+   {
+      delay_ms(20);
+      if(input(pin_b0) == 0)
+      {
+         aa++;
+         while(input(pin_b0) == 0);
+      }
+   }
+   if(input(pin_b1) == 0)
+   {
+      delay_ms(20);
+      if(input(pin_b1) == 0)
+      {
+         if(aa > 0)
+         {
+            aa--;
+         }
+         while(input(pin_b1) == 0);
+      }
+   }
+   bb = get_timer0();
+   if(bb == aa)
+   {
+      lcd_gotoxy(1,2);
+      printf(lcd_putc,"SO SAN PHAM: %02u", bb);
+      delay_ms(100);
+      blink();
+   }
+   lcd_gotoxy(1,2);
+   printf(lcd_putc,"SO SAN PHAM: %02u", bb);
+}
+void main()
+{
+   lcd_init();
+   setup_timer_0(T0_EXT_L_TO_H|T0_DIV_1);
+   set_timer0(0);
+   while(TRUE)
+   {
+      lcd_gotoxy(1,1);
+      printf(lcd_putc,"GIA TRI DAT: %2u", aa);   //Ko co so 2 trong %2u se bi loi ngay
+      
+      count();
+   }
+
+}

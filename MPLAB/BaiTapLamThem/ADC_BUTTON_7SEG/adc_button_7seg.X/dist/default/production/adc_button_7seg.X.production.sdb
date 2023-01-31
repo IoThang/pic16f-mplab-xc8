@@ -1,0 +1,307 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F88 ]
+[d frameptr 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+"43 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"19 C:\PIC16F887\MPLAB\BaiTapLamThem\ADC_BUTTON_7SEG\adc_button_7seg.X\newmain.c
+[v _laybit7 laybit7 `(uc  1 e 1 0 ]
+"26
+[v _xuat_1byte xuat_1byte `(v  1 e 1 0 ]
+"38
+[v _hienthi hienthi `(v  1 e 1 0 ]
+"48
+[v _ADCInit ADCInit `(v  1 e 1 0 ]
+"60
+[v _get_val get_val `(ui  1 e 2 0 ]
+"71
+[v _Button_first Button_first `(v  1 e 1 0 ]
+"89
+[v _Button_second Button_second `(v  1 e 1 0 ]
+"121
+[v _main main `(v  1 e 1 0 ]
+[s S118 . 1 `uc 1 RA0 1 0 :1:0 
+`uc 1 RA1 1 0 :1:1 
+`uc 1 RA2 1 0 :1:2 
+`uc 1 RA3 1 0 :1:3 
+`uc 1 RA4 1 0 :1:4 
+`uc 1 RA5 1 0 :1:5 
+`uc 1 RA6 1 0 :1:6 
+`uc 1 RA7 1 0 :1:7 
+]
+"184 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f88.h
+[u S127 . 1 `S118 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES127  1 e 1 @5 ]
+[s S22 . 1 `uc 1 RB0 1 0 :1:0 
+`uc 1 RB1 1 0 :1:1 
+`uc 1 RB2 1 0 :1:2 
+`uc 1 RB3 1 0 :1:3 
+`uc 1 RB4 1 0 :1:4 
+`uc 1 RB5 1 0 :1:5 
+`uc 1 RB6 1 0 :1:6 
+`uc 1 RB7 1 0 :1:7 
+]
+"246
+[u S31 . 1 `S22 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES31  1 e 1 @6 ]
+"915
+[v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
+"922
+[v _ADCON0 ADCON0 `VEuc  1 e 1 @31 ]
+[s S72 . 1 `uc 1 ADON 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 GO_nDONE 1 0 :1:2 
+`uc 1 CHS 1 0 :3:3 
+`uc 1 ADCS 1 0 :2:6 
+]
+"953
+[s S78 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 GO 1 0 :1:2 
+`uc 1 CHS0 1 0 :1:3 
+`uc 1 CHS1 1 0 :1:4 
+`uc 1 CHS2 1 0 :1:5 
+`uc 1 ADCS0 1 0 :1:6 
+`uc 1 ADCS1 1 0 :1:7 
+]
+[s S86 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nDONE 1 0 :1:2 
+]
+[s S89 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 GO_DONE 1 0 :1:2 
+]
+[u S92 . 1 `S72 1 . 1 0 `S78 1 . 1 0 `S86 1 . 1 0 `S89 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES92  1 e 1 @31 ]
+"1150
+[v _TRISB TRISB `VEuc  1 e 1 @134 ]
+"1736
+[v _ANSEL ANSEL `VEuc  1 e 1 @155 ]
+[s S49 . 1 `uc 1 ANS0 1 0 :1:0 
+`uc 1 ANS1 1 0 :1:1 
+`uc 1 ANS2 1 0 :1:2 
+`uc 1 ANS3 1 0 :1:3 
+`uc 1 ANS4 1 0 :1:4 
+`uc 1 ANS5 1 0 :1:5 
+`uc 1 ANS6 1 0 :1:6 
+]
+"1752
+[u S57 . 1 `S49 1 . 1 0 ]
+[v _ANSELbits ANSELbits `VES57  1 e 1 @155 ]
+"1927
+[v _ADRESL ADRESL `VEuc  1 e 1 @158 ]
+"1934
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @159 ]
+"15 C:\PIC16F887\MPLAB\BaiTapLamThem\ADC_BUTTON_7SEG\adc_button_7seg.X\newmain.c
+[v _maLed maLed `[10]uc  1 e 10 0 ]
+"17
+[v _y y `f  1 e 4 0 ]
+[v _z z `f  1 e 4 0 ]
+"121
+[v _main main `(v  1 e 1 0 ]
+{
+"131
+[v main@j j `uc  1 a 1 74 ]
+"129
+[v main@i i `uc  1 a 1 73 ]
+"152
+} 0
+"89
+[v _Button_second Button_second `(v  1 e 1 0 ]
+{
+[v Button_second@i i `uc  1 a 1 wreg ]
+[v Button_second@i i `uc  1 a 1 wreg ]
+"91
+[v Button_second@i i `uc  1 a 1 70 ]
+"106
+} 0
+"71
+[v _Button_first Button_first `(v  1 e 1 0 ]
+{
+[v Button_first@x x `uc  1 a 1 wreg ]
+[v Button_first@x x `uc  1 a 1 wreg ]
+"73
+[v Button_first@x x `uc  1 a 1 70 ]
+"88
+} 0
+"38
+[v _hienthi hienthi `(v  1 e 1 0 ]
+{
+[v hienthi@n n `uc  1 a 1 wreg ]
+[v hienthi@n n `uc  1 a 1 wreg ]
+[v hienthi@m m `uc  1 p 1 4 ]
+"40
+[v hienthi@n n `uc  1 a 1 5 ]
+"46
+} 0
+"26
+[v _xuat_1byte xuat_1byte `(v  1 e 1 0 ]
+{
+[v xuat_1byte@xuatbyte xuatbyte `uc  1 a 1 wreg ]
+"29
+[v xuat_1byte@i i `uc  1 a 1 5 ]
+"28
+[v xuat_1byte@b b `uc  1 a 1 4 ]
+[v xuat_1byte@xuat xuat `uc  1 a 1 3 ]
+"26
+[v xuat_1byte@xuatbyte xuatbyte `uc  1 a 1 wreg ]
+"28
+[v xuat_1byte@xuatbyte xuatbyte `uc  1 a 1 2 ]
+"37
+} 0
+"19
+[v _laybit7 laybit7 `(uc  1 e 1 0 ]
+{
+[v laybit7@x x `uc  1 a 1 wreg ]
+[v laybit7@x x `uc  1 a 1 wreg ]
+"21
+[v laybit7@x x `uc  1 a 1 0 ]
+"25
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+{
+"10
+[v ___awmod@sign sign `uc  1 a 1 6 ]
+[v ___awmod@counter counter `uc  1 a 1 5 ]
+"5
+[v ___awmod@divisor divisor `i  1 p 2 0 ]
+[v ___awmod@dividend dividend `i  1 p 2 2 ]
+"34
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v ___awdiv@quotient quotient `i  1 a 2 2 ]
+"11
+[v ___awdiv@sign sign `uc  1 a 1 1 ]
+[v ___awdiv@counter counter `uc  1 a 1 0 ]
+"5
+[v ___awdiv@divisor divisor `i  1 p 2 7 ]
+[v ___awdiv@dividend dividend `i  1 p 2 9 ]
+"41
+} 0
+"60 C:\PIC16F887\MPLAB\BaiTapLamThem\ADC_BUTTON_7SEG\adc_button_7seg.X\newmain.c
+[v _get_val get_val `(ui  1 e 2 0 ]
+{
+"70
+} 0
+"10 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+{
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+"13
+[v ___xxtofl@arg arg `ul  1 a 4 6 ]
+"12
+[v ___xxtofl@exp exp `uc  1 a 1 5 ]
+"10
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+[v ___xxtofl@val val `l  1 p 4 10 ]
+"15
+[v ___xxtofl@sign sign `uc  1 a 1 4 ]
+"44
+} 0
+"15 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 8 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 4 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 6 ]
+"53
+} 0
+"43 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
+{
+"45
+[v ___fltol@exp1 exp1 `uc  1 a 1 10 ]
+[v ___fltol@sign1 sign1 `uc  1 a 1 9 ]
+"43
+[v ___fltol@f1 f1 `d  1 p 4 0 ]
+"70
+} 0
+"8 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+{
+[s S504 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+"13
+[s S509 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
+[u S512 . 4 `l 1 i 4 0 `d 1 f 4 0 `S504 1 fAsBytes 4 0 `S509 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S512  1 a 4 30 ]
+"12
+[v ___flmul@grs grs `ul  1 a 4 24 ]
+[s S581 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+"14
+[u S584 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S581 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S584  1 a 2 34 ]
+"10
+[v ___flmul@bexp bexp `uc  1 a 1 29 ]
+"11
+[v ___flmul@aexp aexp `uc  1 a 1 28 ]
+"9
+[v ___flmul@sign sign `uc  1 a 1 23 ]
+"8
+[v ___flmul@b b `d  1 p 4 10 ]
+[v ___flmul@a a `d  1 p 4 14 ]
+"205
+} 0
+"4 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+{
+[v __Umul8_16@multiplier multiplier `uc  1 a 1 wreg ]
+"6
+[v __Umul8_16@word_mpld word_mpld `ui  1 a 2 6 ]
+"5
+[v __Umul8_16@product product `ui  1 a 2 4 ]
+"4
+[v __Umul8_16@multiplier multiplier `uc  1 a 1 wreg ]
+[v __Umul8_16@multiplicand multiplicand `uc  1 p 1 0 ]
+[v __Umul8_16@multiplier multiplier `uc  1 a 1 8 ]
+"60
+} 0
+"8 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+{
+"21
+[v ___fldiv@grs grs `ul  1 a 4 56 ]
+"22
+[v ___fldiv@rem rem `ul  1 a 4 49 ]
+"20
+[v ___fldiv@new_exp new_exp `i  1 a 2 54 ]
+"19
+[v ___fldiv@aexp aexp `uc  1 a 1 61 ]
+"18
+[v ___fldiv@bexp bexp `uc  1 a 1 60 ]
+"16
+[v ___fldiv@sign sign `uc  1 a 1 53 ]
+"8
+[v ___fldiv@a a `d  1 p 4 36 ]
+[v ___fldiv@b b `d  1 p 4 40 ]
+"185
+} 0
+"48 C:\PIC16F887\MPLAB\BaiTapLamThem\ADC_BUTTON_7SEG\adc_button_7seg.X\newmain.c
+[v _ADCInit ADCInit `(v  1 e 1 0 ]
+{
+"59
+} 0

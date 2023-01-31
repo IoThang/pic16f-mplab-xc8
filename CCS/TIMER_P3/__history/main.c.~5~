@@ -1,0 +1,23 @@
+#include <main.h>
+#include <lcd.c>
+unsigned char aa = 20;
+unsigned char bb = 0;
+void count()
+{
+   sp = get_timer0();
+   lcd_gotoxy(1,1);
+   printf(lcd_putc,"%u", sp);
+}
+void main()
+{
+   lcd_init();
+   setup_timer_0(T0_EXT_L_TO_H|T0_DIV_1);
+   
+   while(TRUE)
+   {
+      lcd_gotoxy(1,1);
+      printf(lcd_putc,"GIA TRI DAT: %u", aa);
+      count();
+   }
+
+}

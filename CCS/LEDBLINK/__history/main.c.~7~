@@ -1,0 +1,56 @@
+
+#include <main.h>
+
+void blink (INT time)
+{
+   UNSIGNED char i;
+   FOR(i = 0; i < time; i++)
+   {
+      output_b(0xFF);
+      delay_ms(100);
+      output_b(0x00);
+      delay_ms(100);
+   }
+}
+
+void main()
+{
+   WHILE (TRUE)
+   {
+      blink (10) ;
+      
+      LED_1(1);
+      delay_ms(300);
+      LED_1(0);
+      
+      LED_2(1);
+      delay_ms(300);
+      LED_2(0);
+      
+      LED_3(1);
+      delay_ms(300);
+      LED_3(0);
+      
+      LED_4(1);
+      delay_ms(300);
+      LED_4(0);
+      
+      LED_5(1);
+      delay_ms(300);
+      LED_5(0);
+      
+      LED_6(1);
+      delay_ms(300);
+      LED_6(0);
+      
+      LED_7(1);
+      delay_ms(300);
+      LED_7(0);
+      
+      LED_8(1);
+      delay_ms(300);
+      LED_8(0);
+      
+   }
+}
+

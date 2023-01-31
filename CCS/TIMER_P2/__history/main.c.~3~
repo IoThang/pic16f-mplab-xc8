@@ -1,0 +1,32 @@
+#include <main.h>
+#bit TMR1IF = 0x0.c;
+int bdt = 0;
+void delay_200ms()
+{
+   set_timer1(3036);
+   while(1)
+   {
+      if(TMR1IF == 1)
+      {
+         set_timer1(3036);
+         bdt++;
+         TMR1IF = 0;
+         if(bdt == 2)
+         {
+            break;
+            bdt = 0;
+         }
+      }
+   }
+   
+}
+void main()
+{
+   set_tris_b(0);
+   setup_timer_1(T1_INTERNAL|T1_DIV_BY_8)
+   while(TRUE)
+   {
+      delay_200ms();
+   }
+
+}

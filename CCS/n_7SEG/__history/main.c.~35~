@@ -1,0 +1,43 @@
+#include <main.h>
+#include <math.h>
+const UNSIGNED char maLed[10]={0xC0, 0xF9, 0xA4, 0xB0, 0x99, 0x92, 0x82, 0b11111000, 0x80, 0x90};
+UNSIGNED char DLHT[8] = {0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF, 0xFF};
+void tachSo (unsigned char n)
+{
+   unsigned char i = 7;
+   while (n != 0)
+   {
+      DLHT[i--] = maLed[n % 10];
+      n /= 10;
+   }
+}
+void hienthi()
+{
+   for(unsigned char j = 0; j < 10; j++)
+      {
+         unsigned char quet = 0b11111110;
+         for(unsigned char i = 0; i < 8; i++)
+         {
+            output_d(quet);
+            output_c(DLHT[i]);
+            delay_ms(4);
+            output_c(0xFF);
+            quet = (quet << 1) + 1;
+         }
+      }
+}
+
+void main()
+{
+   //output_c (0x00); //tat het port c chong nhieu
+   set_tris_c (0); //configues
+   set_tris_d (0);
+   WHILE (TRUE)
+   {
+      for(unsigned int32 giay = 260; giay < 99999999; giay++)
+      {
+         tachSo(giay);
+         hienthi();
+      }
+   }
+}

@@ -1,0 +1,67 @@
+
+#include <main.h>
+#define BUTTON PIN_E3
+
+const UNSIGNED char maLed[]={0x40, 0x79, 0x24, 0x30, 0x19, 0x12, 0x02, 0x78, 0x00, 0x10};
+void count()
+{
+   SIGNED char i;
+   FOR (i = 0; i <= 9; i++)
+   {
+      output_c (maLed[i]);
+      delay_ms (500);
+   }
+}
+
+void countDown()
+{
+   SIGNED char j; //Ko dung int duoc
+   FOR (j = 9; j >= 0; j--)
+   {
+      output_c (maLed[j]);
+      delay_ms (500);
+   }
+}
+
+void buttonLed()
+{
+   char cnt = 0;
+
+   WHILE(1)
+   {
+      IF (input (BUTTON) == 0)
+      {
+         delay_ms (20);
+
+         IF (input (BUTTON) == 0)
+         {
+            IF (cnt > 9)
+            {
+               cnt = 0;
+            }
+            WHILE (input (BUTTON) == 0);
+            output_c (maLed[cnt]);
+            delay_ms (300);
+            cnt++;
+            //WHILE (input (BUTTON) == 0);
+         }
+      }
+   }
+}
+
+void main()
+{
+   output_c (0x00); //tat het port c chong nhieu
+   set_tris_c (0); //configues
+   WHILE (TRUE)
+   {
+      /* count () ;
+      output_c (0xFF); //Delete Screen in 300ms
+      delay_ms (300);
+      countDown ();
+      output_c (0xFF); //Delete Screen in 300ms
+      delay_ms (300); */
+      buttonLed ();
+   }
+}
+

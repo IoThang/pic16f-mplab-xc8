@@ -1,0 +1,35 @@
+#include <main.h>
+
+const UNSIGNED char maLed[10]={0xC0, 0xF9, 0xA4, 0xB0, 0x99, 0x92, 0x82, 0b11111000, 0x80, 0x90};
+const UNSIGNED char DLHT[8] = {0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF, 0xFF};
+void hienthi()
+{
+for(unsigned char j = 0; j < 30; j++)
+   {
+      unsigned char quet = 0b11111110;
+      for(unsigned char i = 0; i < 8; i++)
+      {
+         output_c(quet);
+         output_d(DLHT[i]);
+         delay_ms(4);
+         output_c(0b11111111);
+         quet = (quet << 1) + 1;
+      }
+   }
+}
+
+void main()
+{
+   //output_c (0x00); //tat het port c chong nhieu
+   //set_tris_c (0); //configues
+   //set_tris_d (0);
+   WHILE (TRUE)
+   {
+      for(unsigned char giay = 0; giay < 60; giay++)
+      {
+         DLHT[6] = maLed[i / 10];
+         DLHT[7] = maLed[i % 10];
+         hienthi();
+      }
+   }
+}

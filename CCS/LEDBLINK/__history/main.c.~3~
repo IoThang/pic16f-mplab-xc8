@@ -1,0 +1,23 @@
+
+#include <main.h>
+
+void blink (INT time)
+{
+   UNSIGNED char i;
+   FOR(i = 0; i < n; i++)
+   {
+      output_b(0xFF);
+      delay_ms(300);
+      output_b(0x00);
+      delay_ms(300);
+   }
+}
+
+void main()
+{
+   WHILE (TRUE)
+   {
+      blink (10) ;
+   }
+}
+
